@@ -1,0 +1,32 @@
+{
+    "Productos": [
+        {
+            "id": 1,
+            "Modelo": "New York",
+            "Marca": "Goorin",
+            "precio": "$100",
+            "imagen": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-freedom-eagle-101-0384-blu-2-min_2.jpg"
+        },
+        {
+            "id": 1,
+            "Modelo": "New York",
+            "Marca": "Goorin",
+            "precio": "$100",
+            "imagen": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-freedom-eagle-101-0384-blu-2-min_2.jpg"
+        },
+        {
+            "id": 1,
+            "Modelo": "New York",
+            "Marca": "Goorin",
+            "precio": "$100",
+            "imagen": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-freedom-eagle-101-0384-blu-2-min_2.jpg"
+        },
+        {
+            "id": 1,
+            "Modelo": "New York",
+            "Marca": "Goorin",
+            "precio": "$100",
+            "imagen": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-freedom-eagle-101-0384-blu-2-min_2.jpg"
+        }
+    ]
+}
