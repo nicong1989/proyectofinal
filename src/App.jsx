@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import ListMotorcycles from './components/ListMotorcycles';
+import ListProductos from './components/ListProductos';
 
 const App = () => {
     return (
         <Container fluid>
-            <h1 className="text-center">Listado de Motos</h1>
-            <ListMotorcycles />
+            <h2 className="text-center">Prueba de productos con JSON SERVER Y AXIOS</h2>
+            <ListProductos />
         </Container>
     )
 }
