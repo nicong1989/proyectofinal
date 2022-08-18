@@ -1,13 +1,14 @@
-
 import React from 'react'
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import Card from 'react-bootstrap/Card';
+
 import './styles/styles.css'
 
-const CardProductos = ({productos}) => {
+const CardProductos = ({ productos }) => {
 
 
     return (
-        <div className="col-4 mb-3">
+        <div>
             <Card>
                 <Card.Title className="text-center">{productos.reference}</Card.Title>
                 <img src={productos.image} alt={productos.reference} className="card-img-top image-card" />
@@ -21,6 +22,7 @@ const CardProductos = ({productos}) => {
                     <button className="btn btn-primary me-2" >Editar</button>
                 </Card.Body>
             </Card>
+            
         </div>
     )
 }

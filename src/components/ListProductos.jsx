@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CardProductos from './CardProductos';
-import { Container, } from '@mui/system';
+
 
 
 
@@ -28,24 +28,17 @@ const ListProductos = () => {
 
 
     return (
-        <Container>
-           
-                {
-                    list.map((productos, index) => (
-                        <CardProductos
-                            key={index}
-                            productos={productos}
+        <>
+            {
+                list.map((productos, index) => (
+                    <CardProductos
+                        key={index}
+                        productos={productos}
 
-                        />
-                    ))
-                }
-            
-
-
-
-
-
-        </Container>
+                    />
+                ))
+            }
+        </>
     )
 }
 
