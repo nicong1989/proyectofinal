@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import Cards from "./components/componentesdeprueba/Cards";
 import Products from "./components/componentesdeprueba/Products"
 import contents from './content';
+import Sucripcion from "./components/componentesdeprueba/Sucripcion";
 
 
 
@@ -16,7 +17,7 @@ const useStyles = makeStyles({
     height: "100vh",
     width: "100%",
     maxWidth: "1400px !important",
-    color: '#a7ff83',
+    color: 'black',
   },
 
 
@@ -46,6 +47,7 @@ const App = () => {
                     />
                 ))}
             </div>
+                  <Sucripcion />
     </Container>
     
    
