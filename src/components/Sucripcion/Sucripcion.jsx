@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Sucripcion = () => {
   return (
     <section className="page-section" id="contact">

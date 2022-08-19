@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import CardProductos from './CardProductos';
+import Producto from './Producto';
 
 
 
@@ -28,17 +28,17 @@ const ListProductos = () => {
 
 
     return (
-        <>
+        <div>
             {
                 list.map((productos, index) => (
-                    <CardProductos
+                    <Producto
                         key={index}
                         productos={productos}
 
                     />
                 ))
             }
-        </>
+        </div>
     )
 }
 

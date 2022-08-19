@@ -1,27 +1,26 @@
 import React from "react";
 import Card from "./Card";
 
-import image1 from "../assets/image1.jpg";
-import image2 from '../assets/image2.jpg'
-import image3 from '../assets/image3.jpg'
+import image1 from "../assets/img/goorin1.jpg";
+
 
 const cards = [
   {
     id: 1,
-    title: "Fazt Web",
+    title: "COLECCION ANIMAL FARM",
     image: image1,
     url: "https://faztweb.com",
   },
   {
     id: 2,
-    title: "Fazt Blog",
-    image: image2,
+    title: "COLECCION SLAYER",
+    image: image1,
     url: "https://blog.faztweb.com",
   },
   {
     id: 3,
-    title: "Fazt Youtube",
-    image: image3,
+    title: "COLECCION NEW YORK",
+    image: image1,
     url: "https://youtube.com/fazttech",
   },
 ];
