@@ -1,0 +1,40 @@
+.container-titulo {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    min-height: 1vh;
+  }
+  .titulo-prueba {
+    color: hsl(0, 0%, 28%);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .titulo-prueba {
+    padding: 10px;
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: -100px;
+    }
+    50% {
+      background-position: 300px;
+    }
+    100% {
+      background-position: 600px;
+    }
+  }

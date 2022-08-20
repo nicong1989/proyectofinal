@@ -1,60 +1,99 @@
-import React from 'react'
+import React from "react";
+import { Box } from "@mui/system";
+import FormControl from "@mui/material/FormControl";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import { makeStyles } from "@mui/styles";
+import Swal from "sweetalert2";
+import "animate.css";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
 
+const useStyles = makeStyles({
+  titulo: {
+    color: "#ffff",
+    fontWeight: "bolder",
+    textShadow: "4px 4px 6px #000000",
+  },
+  texto: {
+    color: "#ffff",
 
-const Sucripcion = () => {
+    textShadow: "4px 4px 6px #000000",
+  },
+});
+
+const Sucripcion = (props) => {
+  const mostrarAlerta = () => {
+    Swal.fire({
+      title: "Te has suscripto correctamente",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
+  };
+
+  const classes = useStyles();
+  function transform(value) {
+    return value <= 1 && value !== 0 ? `${value * 100}%` : value;
+  }
+
   return (
-    <section className="page-section" id="contact">
-            <div className="container">
-                <div className="text-center">
-                    <h2 className="section-heading text-uppercase">Contact Us</h2>
-                    <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div className="row align-items-stretch mb-5">
-                        <div className="col-md-6">
-                            <div className="form-group">
-                                
-                                <input className="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div className="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div className="form-group">
-                                
-                                <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div className="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div className="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div className="form-group mb-md-0">
-                                
-                                <input className="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div className="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                            <div className="form-group form-group-textarea mb-md-0">
-                                
-                                <textarea className="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div className="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="d-none" id="submitSuccessMessage">
-                        <div className="text-center text-white mb-3">
-                            <div className="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    
-                    <div className="d-none" id="submitErrorMessage"><div className="text-center text-danger mb-3">Error sending message!</div></div>
-                    
-                    <div className="text-center"><button className="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
-            </div>
-        </section>
-  )
-}
+    <>
+      <Box
+        sx={{
+          width: 1,
+          height: 300,
+          bgcolor: "black",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundImage:
+            'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-03-min.jpg")',
+        }}
+      >
+        <h2 className={classes.titulo}>{props.titulo}</h2>
+        <h6 className={classes.texto}>{props.texto}</h6>
 
-export default Sucripcion
+        <FormControl
+          sx={{
+            width: "500px",
+            bgcolor: "white",
+            color: "white",
+            display: "flex",
+            marginTop: "30px",
+          }}
+        >
+          <OutlinedInput
+            placeholder="Please enter you mail"
+            sx={{
+              border: "1px solid #0000",
+            }}
+          />
+        </FormControl>
+
+        <Button
+          variant="contained"
+          endIcon={<SendIcon />}
+          onClick={() => mostrarAlerta()}
+          sx={{
+            width: "10rem",
+            bgcolor: "black",
+            color: "white",
+            marginTop: "30px",
+            "&:hover": {
+              background: "#17b978",
+            },
+          }}
+        >
+          Sucribirse
+        </Button>
+      </Box>
+    </>
+  );
+};
+
+export default Sucripcion;
