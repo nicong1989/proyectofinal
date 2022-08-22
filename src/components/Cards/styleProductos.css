@@ -1,7 +1,7 @@
 .productList {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 5rem;
+  margin-top: 0.1rem;
   align-items: center;
   flex-direction: column;
 }
@@ -16,11 +16,13 @@
   transition: 0.2s;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 }
 
 .productCard:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0.5rem 0.75rem 1.5rem #bbbbbb;
+  
 }
 
 .productImage {
@@ -100,4 +102,23 @@
 
 .productRating{
   color: rgba(247, 98, 5, 1);
+}
+
+
+
+.notdisplayed {
+  display: none;
+  
+}
+
+.displayed {
+  font-family: var(--bs-font-sans-serif);
+  border: none;
+  display: flex;
+  background-color: #17b978;
+  color: black;
+  height: 30px;
+  margin: auto;
+ 
+ 
 }

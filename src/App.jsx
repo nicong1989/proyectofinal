@@ -4,7 +4,8 @@ import Container from "@mui/material/Container";
 import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
-import Prueba from "./components/Prueba"
+import Prueba from "./components/Prueba";
+import Card from "./components/Card";
 
 
 const useStyles = makeStyles({
@@ -36,13 +37,18 @@ const App = () => {
       </Container>
       
       <Titulo 
-      titulo = "TITULO DE PRUEBA"
+      titulo = "COLECCIÓN"
+      coleccion = "ANIMAL FARM"
       
       />
       <Productos />
       
+      <Titulo 
+      titulo = "COLECCIÓN"
+      coleccion = "SLAYED"
       
-     
+      />
+     <Productos />
       
       <Sucripcion 
       titulo = "MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
@@ -51,7 +57,9 @@ const App = () => {
 
      
       <Prueba />
-  
+    <Card />
+      
+ 
     </>
   );
 };

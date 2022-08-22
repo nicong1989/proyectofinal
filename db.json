@@ -44,54 +44,7 @@
       "timeLeft": 27,
       "totalSales": 7479 
       
-    },
-    {
-      "id": 4,
-      "productType": "GOORAS GOORIN",
-      "model": "BASEBALL",
-      "name": "THE COCK",
-      "price": "$ 6959,00",
-      "image": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-cock-101-0378-blk-2-min_1.jpg",
-      "rating": 5,
-      "timeLeft": 27,
-      "totalSales": 7479 
-      
-    },
-    {
-      "id": 4,
-      "productType": "GOORAS GOORIN",
-      "model": "BASEBALL",
-      "name": "THE COCK",
-      "price": "$ 6959,00",
-      "image": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-cock-101-0378-blk-2-min_1.jpg",
-      "rating": 5,
-      "timeLeft": 27,
-      "totalSales": 7479 
-      
-    },
-    {
-      "id": 4,
-      "productType": "GOORAS GOORIN",
-      "model": "BASEBALL",
-      "name": "THE COCK",
-      "price": "$ 6959,00",
-      "image": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-cock-101-0378-blk-2-min_1.jpg",
-      "rating": 5,
-      "timeLeft": 27,
-      "totalSales": 7479 
-      
-    },
-    {
-      "id": 4,
-      "productType": "GOORAS GOORIN",
-      "model": "BASEBALL",
-      "name": "THE COCK",
-      "price": "$ 6959,00",
-      "image": "https://www.goorinbros.com.ar/media/catalog/product/cache/8/small_image/180x138.46153846154/9df78eab33525d08d6e5fb8d27136e95/g/o/gorra-goorin-baseball-the-cock-101-0378-blk-2-min_1.jpg",
-      "rating": 5,
-      "timeLeft": 27,
-      "totalSales": 7479 
-      
     }
+   
   ]
 }

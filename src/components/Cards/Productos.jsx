@@ -3,6 +3,9 @@ import axios from "axios";
 import Producto from "./Producto";
 import Box from "@mui/material/Box";
 
+
+
+
 const ListProductos = () => {
   const URL = "http://localhost:3002/productos";
 
@@ -21,11 +24,16 @@ const ListProductos = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+
+      <Box sx={{
+        display: "flex", flexWrap: "wrap", justifyContent: "space-around", backgroundImage:
+          'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-05-min.jpg")'
+      }}>
         {list.map((productos, index) => (
           <Producto key={index} productos={productos} />
         ))}
       </Box>
+
     </>
   );
 };
