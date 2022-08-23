@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Producto from "./Producto";
-import Box from "@mui/material/Box";
-
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
+import "./producto.css"
+import Container from '@mui/material/Container';
 
 
 
@@ -28,10 +27,10 @@ const ListProductos = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="swiperContainer">
-          <Swiper
-            modules={[Pagination, Autoplay]}
+      <Container sx={{backgroundColor:'#086972', display:'flex', minHeight:'420px', alignItems:'center'}}>
+        <Container sx={{backgroundImage:'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-01-min.jpg")' }}>
+          <Swiper 
+            modules={[Pagination, Autoplay]}    
             autoplay={{
               delay: 3000,
               disableOnInteraction: false
@@ -74,9 +73,9 @@ const ListProductos = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </Container>
         <div className="pagination" />
-      </div>
+      </Container>
    
       
 
