@@ -51,6 +51,7 @@ const Sucripcion = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          marginTop: '1rem',
           backgroundImage:
             'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-03-min.jpg")',
         }}
