@@ -2,6 +2,7 @@ import React from "react";
 import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
+import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
 
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
         titulo="COLECCIÓN"
         coleccion="SLAYED"
       />
-      <Productos />
+      <ProductosSlayed />
 
       <Sucripcion
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"

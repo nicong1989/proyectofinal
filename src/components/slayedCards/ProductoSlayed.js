@@ -27,7 +27,7 @@ const ExpandMore = styled((props) => {
 }));
 
 
-const CardProductos = ({ productos }) => {
+const CardProductos = ({ slayed }) => {
   const [display, setDisplay] = useState("notdisplayed");
   
 
@@ -44,24 +44,24 @@ const CardProductos = ({ productos }) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={productos.name}
-        subheader={productos.model}
+        title={slayed.name}
+        subheader={slayed.model}
       />
-      <CardMedia component="img" height="150" image={productos.image} sx={{ opacity: '0.8'}}/>
+      <CardMedia component="img" height="150" image={slayed.image} sx={{ opacity: '0.8'}}/>
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="body2" color="text.secondary">
-          {productos.totalSales} units sold
+          {slayed.totalSales} units sold
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {productos.timeLeft} days left
+          {slayed.timeLeft} days left
         </Typography>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="body2" color="text.secondary">
-          {productos.price}
+          {slayed.price}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
-          {[...Array(productos.rating)].map((index) => (
+          {[...Array(slayed.rating)].map((index) => (
             <FaStar id={index + 1} key={index} />
           ))}
         </Typography>

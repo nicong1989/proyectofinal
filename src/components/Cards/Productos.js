@@ -4,10 +4,8 @@ import Producto from "./Producto";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./producto.css"
-import Container from '@mui/material/Container';
-
-
+import "./producto.css";
+import Container from "@mui/material/Container";
 
 const ListProductos = () => {
   const URL = "http://localhost:3002/productos";
@@ -27,13 +25,29 @@ const ListProductos = () => {
 
   return (
     <>
-      <Container sx={{backgroundColor:'#086972', display:'flex', minHeight:'420px', alignItems:'center'}}>
-        <Container sx={{backgroundImage:'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-01-min.jpg")' }}>
-          <Swiper 
-            modules={[Pagination, Autoplay]}    
+      <Container
+        sx={{
+          backgroundColor: "#ffff",
+          display: "flex",
+          minHeight: "420px",
+          alignItems: "center",
+        }}
+      >
+        <Container
+          sx={{
+            backgroundImage:
+              'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-01-min.jpg")',
+            
+            minHeight: "500px",
+            paddingTop:"50px"
+            
+          }}
+        >
+          <Swiper  
+            modules={[Pagination, Autoplay]}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false
+              disableOnInteraction: false,
             }}
             pagination={{
               el: ".pagination",
@@ -67,7 +81,7 @@ const ListProductos = () => {
               },
             }}
           >
-            {list?.map((productos,index) => (
+            {list?.map((productos, index) => (
               <SwiperSlide key={index}>
                 <Producto productos={productos} />
               </SwiperSlide>
@@ -76,16 +90,6 @@ const ListProductos = () => {
         </Container>
         <div className="pagination" />
       </Container>
-   
-      
-
-
-
-   
-
-
-    
-
     </>
   );
 };

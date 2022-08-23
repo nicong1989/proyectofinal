@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/system";
 import FormControl from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
+import Input from "@mui/material/Input";
 import { makeStyles } from "@mui/styles";
 import Swal from "sweetalert2";
 import "animate.css";
@@ -51,7 +51,7 @@ const Sucripcion = (props) => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: '1rem',
+          marginTop: "1rem",
           backgroundImage:
             'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-03-min.jpg")',
         }}
@@ -61,18 +61,23 @@ const Sucripcion = (props) => {
 
         <FormControl
           sx={{
-            width: "500px",
+            width: "30rem",
+
             bgcolor: "white",
             color: "white",
             display: "flex",
             marginTop: "30px",
           }}
         >
-          <OutlinedInput
+          <Input
             placeholder="Please enter you mail"
             sx={{
               border: "1px solid #0000",
             }}
+            type="email"
+            id="email"
+            required="required"
+            data-validation-required-message="Por favor, ingresa tu mail"
           />
         </FormControl>
 
