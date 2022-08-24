@@ -1,13 +1,9 @@
 import React from "react";
 import { Box } from "@mui/system";
-import FormControl from "@mui/material/FormControl";
-import Input from "@mui/material/Input";
 import { makeStyles } from "@mui/styles";
 import Swal from "sweetalert2";
 import "animate.css";
-import SendIcon from "@mui/icons-material/Send";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import ContactForm from "../pruebaFormulario/ContactForm"
 
 const useStyles = makeStyles({
   titulo: {
@@ -36,9 +32,7 @@ const Sucripcion = (props) => {
   };
 
   const classes = useStyles();
-  function transform(value) {
-    return value <= 1 && value !== 0 ? `${value * 100}%` : value;
-  }
+  
 
   return (
     <>
@@ -59,8 +53,8 @@ const Sucripcion = (props) => {
       >
         <h2 className={classes.titulo}>{props.titulo}</h2>
         <h6 className={classes.texto}>{props.texto}</h6>
-
-        <Form>
+        <ContactForm />
+        {/* <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
@@ -88,7 +82,7 @@ const Sucripcion = (props) => {
           }}
         >
           Sucribirse
-        </Button>
+        </Button> */}
       </Box>
     </>
   );
