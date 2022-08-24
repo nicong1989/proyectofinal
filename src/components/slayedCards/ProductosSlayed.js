@@ -38,10 +38,12 @@ const ListProductos = () => {
         <Container
           sx={{
             backgroundImage:
-              'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-01-min.jpg")',
-            
-            minHeight: "500px",
-            paddingTop:"50px"
+            'url("https://images6.alphacoders.com/118/1188879.jpg")',
+          borderRadius:"25px",
+          backgroundRepeat:"no-repeat",
+          backgroundSize:"cover",
+          minHeight: "500px",
+          paddingTop: "50px"
             
           }}
         >

@@ -34,31 +34,32 @@ const CardProductos = ({ slayed }) => {
   const [isRed, setIsRed] = useState(true);
 
   return (
-    <Card sx={{ maxWidth: 345, maxHeight: 600, backgroundColor:'#fffffff2',transition: '0.4s', '&:hover': {
+    <Card sx={{ maxWidth: 345, color:"#ffff", maxHeight: 600, backgroundColor:'#ffffff00',transition: '0.4s', '&:hover': {
       transform: 'translateY(-0.5rem)',
-      boxShadow: '0.5rem 0.75rem 1.5rem #bbbbbb',
+      boxShadow: '0.5rem 0.75rem 1.5rem #17b978',
    }, }}>
-      <CardHeader
+      <CardHeader 
         action={
-          <IconButton aria-label="settings">
+          <IconButton aria-label="settings" sx={{color:"white",textShadow: "4px 4px 6px #000000"}}>
             <MoreVertIcon />
           </IconButton>
         }
-        title={slayed.name}
-        subheader={slayed.model}
+        title={<strong>{slayed.name}</strong>}
+        subheader = {<Typography color="#ffff" >{slayed.model}</Typography>}
+        sx={{color:"white"}}
       />
-      <CardMedia component="img" height="150" image={slayed.image} sx={{ opacity: '0.8'}}/>
-      <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="body2" color="text.secondary">
-          {slayed.totalSales} units sold
+      <CardMedia component="img" height="150" sx={{ maxWidth:"79%", filter: "saturate(250%)" }}image={slayed.image}/>
+      <CardContent sx={{ display: "flex", justifyContent: "space-between", textShadow: "4px 4px 6px #000000" }}>
+        <Typography variant="body2" color="#ffff" sx={{textShadow: "4px 4px 6px #000000"}} >
+        {<strong>{slayed.totalSales}</strong>} units sold
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {slayed.timeLeft} days left
+        <Typography variant="body2" color="#ffff">
+        {<strong>{slayed.timeLeft}</strong>} days left
         </Typography>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="body2" color="text.secondary">
-          {slayed.price}
+        <Typography variant="body2" color="#ffff" sx={{fontSize:"1.5rem"}}>
+        {<strong>{slayed.price}</strong>}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
           {[...Array(slayed.rating)].map((index) => (
@@ -68,15 +69,15 @@ const CardProductos = ({ slayed }) => {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" style={{ color: isRed ? "grey" : "red" }} onClick={() => {
+        <IconButton aria-label="add to favorites" style={{ color: isRed ? "#ffff" : "red", textShadow: "4px 4px 6px #000000" }} onClick={() => {
             setIsRed(!isRed);
           }}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="buy">
+        <IconButton aria-label="buy" sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
           <FaShoppingCart />
-        </IconButton>
-        <ExpandMore>
+        </IconButton >
+        <ExpandMore sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
           <SiAddthis />
         </ExpandMore>
       </CardActions>
