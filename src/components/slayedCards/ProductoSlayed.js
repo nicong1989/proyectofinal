@@ -12,8 +12,12 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { SiAddthis } from "react-icons/si";
-
 import { FaShoppingCart, FaStar } from "react-icons/fa";
+
+
+
+
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,38 +32,40 @@ const ExpandMore = styled((props) => {
 
 
 const CardProductos = ({ slayed }) => {
-  const [display, setDisplay] = useState("notdisplayed");
-  
+
+
 
   const [isRed, setIsRed] = useState(true);
 
   return (
-    <Card sx={{ maxWidth: 345, color:"#ffff", maxHeight: 600, backgroundColor:'#ffffff00',transition: '0.4s', '&:hover': {
-      transform: 'translateY(-0.5rem)',
-      boxShadow: '0.5rem 0.75rem 1.5rem #17b978',
-   }, }}>
-      <CardHeader 
+    <Card sx={{
+      maxWidth: 345, color: "#ffff", maxHeight: 600, backgroundColor: '#ffffff00', transition: '0.4s', '&:hover': {
+        transform: 'translateY(-0.5rem)',
+        boxShadow: '0.5rem 0.75rem 1.5rem #17b978',
+      },
+    }}>
+      <CardHeader
         action={
-          <IconButton aria-label="settings" sx={{color:"white",textShadow: "4px 4px 6px #000000"}}>
+          <IconButton aria-label="settings" sx={{ color: "white", textShadow: "4px 4px 6px #000000" }}>
             <MoreVertIcon />
           </IconButton>
         }
         title={<strong>{slayed.name}</strong>}
-        subheader = {<Typography color="#ffff" >{slayed.model}</Typography>}
-        sx={{color:"white"}}
+        subheader={<Typography color="#ffff" >{slayed.model}</Typography>}
+        sx={{ color: "white" }}
       />
-      <CardMedia component="img" height="150" sx={{ maxWidth:"79%", filter: "saturate(250%)" }}image={slayed.image}/>
+      <CardMedia component="img" height="150" sx={{ maxWidth: "79%", filter: "saturate(250%)" }} image={slayed.image} />
       <CardContent sx={{ display: "flex", justifyContent: "space-between", textShadow: "4px 4px 6px #000000" }}>
-        <Typography variant="body2" color="#ffff" sx={{textShadow: "4px 4px 6px #000000"}} >
-        {<strong>{slayed.totalSales}</strong>} units sold
+        <Typography variant="body2" color="#ffff" sx={{ textShadow: "4px 4px 6px #000000" }} >
+          {<strong>{slayed.totalSales}</strong>} units sold
         </Typography>
         <Typography variant="body2" color="#ffff">
-        {<strong>{slayed.timeLeft}</strong>} days left
+          {<strong>{slayed.timeLeft}</strong>} days left
         </Typography>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="body2" color="#ffff" sx={{fontSize:"1.5rem"}}>
-        {<strong>{slayed.price}</strong>}
+        <Typography variant="body2" color="#ffff" sx={{ fontSize: "1.5rem" }}>
+          {<strong>{slayed.price}</strong>}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
           {[...Array(slayed.rating)].map((index) => (
@@ -69,15 +75,37 @@ const CardProductos = ({ slayed }) => {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" style={{ color: isRed ? "#ffff" : "red", textShadow: "4px 4px 6px #000000" }} onClick={() => {
-            setIsRed(!isRed);
-          }}>
-          <FavoriteIcon />
+
+
+        <IconButton aria-label="add to favorites" style={{
+          color: isRed ? "#ffff" : "#39FF14", textShadow: "4px 4px 6px #000000",
+        }} onClick={() => {
+          setIsRed(!isRed);
+        }}>
+          <FavoriteIcon>
+          </FavoriteIcon>
         </IconButton>
-        <IconButton aria-label="buy" sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
+
+
+
+
+
+
+
+        <IconButton aria-label="buy" sx={{
+          color: "#ffff", textShadow: "4px 4px 6px #000000", '&:hover': {
+            color: '#39FF14',
+          }
+        }}>
+
           <FaShoppingCart />
-        </IconButton >
-        <ExpandMore sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
+        </IconButton>
+        <ExpandMore sx={{
+          color: "#ffff", textShadow: "4px 4px 6px #ffff", '&:hover': {
+            color: '#39FF14',
+
+          }
+        }}>
           <SiAddthis />
         </ExpandMore>
       </CardActions>

@@ -29,37 +29,39 @@ const ExpandMore = styled((props) => {
 
 const CardProductos = ({ productos }) => {
   const [display, setDisplay] = useState("notdisplayed");
-  
+
 
   const [isRed, setIsRed] = useState(true);
 
   return (
-    <Card sx={{ maxWidth: 345, color:"#ffff", maxHeight: 600, backgroundColor:'#ffffff00',transition: '0.4s', '&:hover': {
-      transform: 'translateY(-0.5rem)',
-      boxShadow: '0.5rem 0.75rem 1.5rem #17b978',
-   }, }}>
-      <CardHeader 
+    <Card sx={{
+      maxWidth: 345, color: "#ffff", maxHeight: 600, backgroundColor: '#ffffff00', transition: '0.4s', '&:hover': {
+        transform: 'translateY(-0.5rem)',
+        boxShadow: '0.5rem 0.75rem 1.5rem #17b978',
+      },
+    }}>
+      <CardHeader
         action={
-          <IconButton aria-label="settings" sx={{color:"white",textShadow: "4px 4px 6px #000000"}}>
+          <IconButton aria-label="settings" sx={{ color: "white", textShadow: "4px 4px 6px #000000" }}>
             <MoreVertIcon />
           </IconButton>
         }
         title={<strong>{productos.name}</strong>}
-        subheader = {<Typography color="#ffff" >{productos.model}</Typography>}
-        sx={{color:"white"}}
+        subheader={<Typography color="#ffff" >{productos.model}</Typography>}
+        sx={{ color: "white" }}
       />
-      <CardMedia component="img" height="150" sx={{ maxWidth:"79%", filter: "saturate(250%)" }}image={productos.image}/>
+      <CardMedia component="img" height="150" sx={{ maxWidth: "79%", filter: "saturate(250%)" }} image={productos.image} />
       <CardContent sx={{ display: "flex", justifyContent: "space-between", textShadow: "4px 4px 6px #000000" }}>
-        <Typography variant="body2" color="#ffff" sx={{textShadow: "4px 4px 6px #000000"}} >
-        {<strong>{productos.totalSales}</strong>} units sold
+        <Typography variant="body2" color="#ffff" sx={{ textShadow: "4px 4px 6px #000000" }} >
+          {<strong>{productos.totalSales}</strong>} units sold
         </Typography>
         <Typography variant="body2" color="#ffff">
-        {<strong>{productos.timeLeft}</strong>} days left
+          {<strong>{productos.timeLeft}</strong>} days left
         </Typography>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="body2" color="#ffff" sx={{fontSize:"1.5rem"}}>
-        {<strong>{productos.price}</strong>}
+        <Typography variant="body2" color="#ffff" sx={{ fontSize: "1.5rem" }}>
+          {<strong>{productos.price}</strong>}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
           {[...Array(productos.rating)].map((index) => (
@@ -69,15 +71,27 @@ const CardProductos = ({ productos }) => {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" style={{ color: isRed ? "#ffff" : "red", textShadow: "4px 4px 6px #000000" }} onClick={() => {
-            setIsRed(!isRed);
-          }}>
+        <IconButton aria-label="add to favorites" style={{
+          color: isRed ? "#ffff" : "#39FF14", textShadow: "4px 4px 6px #000000",
+        }} onClick={() => {
+          setIsRed(!isRed);
+        }}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="buy" sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
+        <IconButton aria-label="buy" sx={{
+          color: "#ffff", textShadow: "4px 4px 6px #000000", '&:hover': {
+            color: '#39FF14',
+
+          }
+        }}>
           <FaShoppingCart />
         </IconButton >
-        <ExpandMore sx={{color:"#ffff",textShadow: "4px 4px 6px #000000"}}>
+        <ExpandMore sx={{
+          color: "#ffff", textShadow: "4px 4px 6px #ffff", '&:hover': {
+            color: '#39FF14',
+
+          }
+        }}>
           <SiAddthis />
         </ExpandMore>
       </CardActions>

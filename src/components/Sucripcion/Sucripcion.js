@@ -5,8 +5,9 @@ import Input from "@mui/material/Input";
 import { makeStyles } from "@mui/styles";
 import Swal from "sweetalert2";
 import "animate.css";
-import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const useStyles = makeStyles({
   titulo: {
@@ -59,28 +60,19 @@ const Sucripcion = (props) => {
         <h2 className={classes.titulo}>{props.titulo}</h2>
         <h6 className={classes.texto}>{props.texto}</h6>
 
-        <FormControl
-          sx={{
-            width: "30rem",
-
-            bgcolor: "white",
-            color: "white",
-            display: "flex",
-            marginTop: "30px",
-          }}
-        >
-          <Input
-            placeholder="Please enter you mail"
-            sx={{
-              border: "1px solid #0000",
-            }}
-            type="email"
-            id="email"
-            required="required"
-            data-validation-required-message="Por favor, ingresa tu mail"
-          />
-        </FormControl>
-
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+                 
+          <Button variant="primary" type="submit"  onClick={() => mostrarAlerta()}>
+            Suscribirse
+          </Button>
+        </Form>
         <Button
           variant="contained"
           endIcon={<SendIcon />}
