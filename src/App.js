@@ -3,12 +3,16 @@ import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
 import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
+import PruebaModal from "./components/modal/PruebaModal";
+
+
 
 
 const App = () => {
 
   return (
     <>
+
       <Titulo
         titulo="COLECCIÓN"
         coleccion="ANIMAL FARM"
@@ -25,10 +29,10 @@ const App = () => {
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
         texto="Suscribite a nuestro newsletter y enteráte de todos los beneficios"
       />
-
-
+      <PruebaModal />
     </>
   );
 };
+
 
 export default App;

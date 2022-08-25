@@ -1,5 +1,4 @@
 import React from "react";
-import "./styleProductos.css";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
@@ -12,8 +11,10 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { SiAddthis } from "react-icons/si";
+import MyVerticallyCenteredModal from '../modal/MyVerticallyCenteredModal';
 
 import { FaShoppingCart, FaStar } from "react-icons/fa";
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -28,8 +29,8 @@ const ExpandMore = styled((props) => {
 
 
 const CardProductos = ({ productos }) => {
-  const [display, setDisplay] = useState("notdisplayed");
 
+  const [modalShow, setModalShow] = React.useState(false);
 
   const [isRed, setIsRed] = useState(true);
 
@@ -78,13 +79,20 @@ const CardProductos = ({ productos }) => {
         }}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="buy" sx={{
+        <IconButton aria-label="buy" onClick={() => setModalShow(true)} sx={{
           color: "#ffff", textShadow: "4px 4px 6px #000000", '&:hover': {
             color: '#39FF14',
 
           }
-        }}>
+        }}
+        
+        >
+          
           <FaShoppingCart />
+          <MyVerticallyCenteredModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+        />
         </IconButton >
         <ExpandMore sx={{
           color: "#ffff", textShadow: "4px 4px 6px #ffff", '&:hover': {

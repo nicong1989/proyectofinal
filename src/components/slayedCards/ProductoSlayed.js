@@ -1,5 +1,4 @@
 import React from "react";
-import "./styleProductos.css";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";

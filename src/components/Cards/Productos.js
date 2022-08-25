@@ -4,7 +4,7 @@ import Producto from "./Producto";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./producto.css";
+
 import Container from "@mui/material/Container";
 
 const ListProductos = () => {

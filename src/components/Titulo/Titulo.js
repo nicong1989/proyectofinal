@@ -8,9 +8,7 @@ import {
 
 const Titulo = (props) => {
 
-  function transform(value) {
-    return value <= 1 && value !== 0 ? `${value * 100}%` : value;
-  }
+  
   return (
 
     <Box
@@ -18,16 +16,13 @@ const Titulo = (props) => {
         width: 1,
         height: "10vh",
         backgroundColor: '#FFFFFF',
-        '&:hover': {
-          backgroundColor: '#E3DEDD',
-
-
-        },
         transition: '.5s ',
         display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
         alignItems: 'center',
         justifyContent: 'center',
-
+        marginTop:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0.5rem', xl:'0.5rem' },
+        marginBottom:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0.5rem', xl:'0.5rem' }
 
       }}>
       <Typography sx={{ fontSize: '30px' }} color="text.secondary">
