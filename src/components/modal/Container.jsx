@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 }));
 
 
-const CardProductos = ({ productos }) => {
+const Container = ({ productos }) => {
 
 
 
@@ -92,7 +92,7 @@ const CardProductos = ({ productos }) => {
   );
 };
 
-export default CardProductos;
+export default Container;
 
 
 
