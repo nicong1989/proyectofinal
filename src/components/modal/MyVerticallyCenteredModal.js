@@ -1,8 +1,27 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function MyVerticallyCenteredModal(props) {
+
+
+
+export default function MyVerticallyCenteredModal(props, {productos}) {
+  const URL = "http://localhost:3002/productos";
+
+  const getData = async () => {
+    const response = axios.get(URL);
+    return response;
+  };
+
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    getData().then((response) => {
+      setList(response.data);
+    });
+  }, []);
   return (
     <Modal
       {...props}
@@ -12,11 +31,11 @@ export default function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Detalles del Articulo
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
+        <h4>{productos.name}</h4>
         <p>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac

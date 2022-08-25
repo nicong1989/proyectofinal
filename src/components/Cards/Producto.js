@@ -10,8 +10,7 @@ import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { SiAddthis } from "react-icons/si";
-import MyVerticallyCenteredModal from '../modal/MyVerticallyCenteredModal';
+import PruebaModal from "../modal/PruebaModal";
 
 import { FaShoppingCart, FaStar } from "react-icons/fa";
 
@@ -29,8 +28,8 @@ const ExpandMore = styled((props) => {
 
 
 const CardProductos = ({ productos }) => {
-
   const [modalShow, setModalShow] = React.useState(false);
+
 
   const [isRed, setIsRed] = useState(true);
 
@@ -73,7 +72,7 @@ const CardProductos = ({ productos }) => {
 
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" style={{
-          color: isRed ? "#ffff" : "#39FF14", textShadow: "4px 4px 6px #000000",
+          textShadow: "4px 4px 6px #000000", color: isRed ? "#ffff" : "black",
         }} onClick={() => {
           setIsRed(!isRed);
         }}>
@@ -81,26 +80,13 @@ const CardProductos = ({ productos }) => {
         </IconButton>
         <IconButton aria-label="buy" onClick={() => setModalShow(true)} sx={{
           color: "#ffff", textShadow: "4px 4px 6px #000000", '&:hover': {
-            color: '#39FF14',
-
-          }
-        }}
-        
-        >
-          
-          <FaShoppingCart />
-          <MyVerticallyCenteredModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
-        </IconButton >
-        <ExpandMore sx={{
-          color: "#ffff", textShadow: "4px 4px 6px #ffff", '&:hover': {
-            color: '#39FF14',
-
+            color: 'black',
           }
         }}>
-          <SiAddthis />
+          <FaShoppingCart/>
+        </IconButton >
+        <ExpandMore>
+          <PruebaModal />
         </ExpandMore>
       </CardActions>
     </Card>
