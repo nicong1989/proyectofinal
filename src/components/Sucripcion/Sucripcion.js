@@ -40,7 +40,7 @@ const Sucripcion = (props) => {
           alignItems:'center',
           justifyContent:'center',
           backgroundImage:
-            'url("https://www.goorinbros.com.ar/media/wysiwyg/sliders/gooring_BannersAbril-03-min.jpg")',
+            'url("https://www.goorinbros.com.ar/skin/frontend/sns_sport/goorin/images/media/bg_suscribe.jpg")',
         }}
       >
         <h2 className={classes.titulo}>{props.titulo}</h2>
