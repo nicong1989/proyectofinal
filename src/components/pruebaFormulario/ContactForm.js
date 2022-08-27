@@ -33,8 +33,8 @@ const validationsForm = (form) => {
 };
 
 let styles = {
-  fontWeight: "bold",
-  color: "rgb(57, 255, 20)",
+  // fontWeight: "bold",
+  color: "#ffff",
   textShadow: "4px 4px 6px #000000",
 
 };
@@ -54,20 +54,20 @@ const ContactForm = () => {
     <div>
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <input style={{ marginTop: '1rem', marginBottom: '1rem', minWidth: '250px', }}
+        <input style={{ marginTop: '1rem', marginBottom: '1rem', minWidth: '250px',border:'none' }}
           type="text"
           name="name"
-          placeholder="Escribe tu nombre"
+          placeholder="Tu nombre"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.name}
           required
         />
         {errors.name && <p style={styles}>{errors.name}</p>}
-        <input style={{ marginBottom: '1rem', minWidth: '250px' }}
+        <input style={{ marginBottom: '1rem', minWidth: '250px', border:'none' }}
           type="email"
           name="email"
-          placeholder="Escribe tu email"
+          placeholder="Tu dirección de e-mail"
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.email}
@@ -75,11 +75,11 @@ const ContactForm = () => {
         />
         {errors.email && <p style={styles}>{errors.email}</p>}
 
-        <input type="submit" value="SUSCRIBIRSE" style={{ width: '102px', backgroundColor: 'rgb(57, 255, 20)', border: 'none', color: '#ffff',textShadow: "4px 4px 6px #000000"}} />
+        <input type="submit" value="SUSCRIBIRSE" style={{ width: '102px', backgroundColor: '#17b978', border: 'none', color: '#ffff',textShadow: "2px 2px 4px #000000"}} />
       </form>
       {loading && <Loader />}
       {response && (
-        <Message msg="Los datos han sido enviados" bgColor="#198754" />
+        <Message msg="Los datos han sido enviados" bgColor="#17b978" />
       )}
     </div>
   );

@@ -1,41 +1,36 @@
 import React from "react";
 import { useState } from "react";
 import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { FaShoppingCart, FaStar } from "react-icons/fa";
 import { SiAddthis } from "react-icons/si";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+import { FaStar } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import "./styles.css";
 
 const CardProductos = ({ productos }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [display, setDisplay] = useState("notdisplayed");
+  const showButton = (e) => {
+    e.preventDefault();
+    setDisplay("displayed");
+  };
 
-  const [isRed, setIsRed] = useState(true);
-
+  const hideButton = (e) => {
+    e.preventDefault();
+    setDisplay("notdisplayed");
+  };
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <Card
+      onMouseEnter={(e) => showButton(e)}
+      onMouseLeave={(e) => hideButton(e)}
       sx={{
         maxWidth: 345,
         color: "#ffff",
@@ -49,42 +44,19 @@ const CardProductos = ({ productos }) => {
       }}
     >
       <CardHeader
-        action={
-          <IconButton
-            aria-label="settings"
-            sx={{ color: "white", textShadow: "4px 4px 6px #000000" }}
-          >
-            <MoreVertIcon />
-          </IconButton>
-        }
         title={<strong>{productos.name}</strong>}
         subheader={<Typography color="#ffff">{productos.model}</Typography>}
         sx={{ color: "white" }}
       />
-      <CardMedia
-        component="img"
-        height="150"
-        sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
-        image={productos.image}
-      />
-      <CardContent
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          textShadow: "4px 4px 6px #000000",
-        }}
-      >
-        <Typography
-          variant="body2"
-          color="#ffff"
-          sx={{ textShadow: "4px 4px 6px #000000" }}
-        >
-          {<strong>{productos.totalSales}</strong>} units sold
-        </Typography>
-        <Typography variant="body2" color="#ffff">
-          {<strong>{productos.timeLeft}</strong>} days left
-        </Typography>
+      <CardContent sx={{ display: "flex", justifyContent: "center" }}>
+        <CardMedia
+           component="img"
+           height="230"
+           sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
+           image={productos.image}
+        />
       </CardContent>
+
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="body2" color="#ffff" sx={{ fontSize: "1.5rem" }}>
           {<strong>{productos.price}</strong>}
@@ -96,78 +68,131 @@ const CardProductos = ({ productos }) => {
         </Typography>
       </CardContent>
 
-      <CardActions disableSpacing>
+      <CardActions
+        disableSpacing
+        sx={{ display: "flex", flexDirection: "row", justifyContent:'space-between' }}
+      >
+        <button onClick={handleShow} className={display}>
+          <strong>COMPRAR</strong>
+        </button>
+
         <IconButton
-          aria-label="add to favorites"
-          style={{
-            textShadow: "4px 4px 6px #000000",
-            color: isRed ? "#ffff" : "black",
-          }}
-          onClick={() => {
-            setIsRed(!isRed);
-          }}
-        >
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton
-          aria-label="buy"
-          sx={{
-            color: "#ffff",
-            textShadow: "4px 4px 6px #000000",
-            "&:hover": {
-              color: "#39FF14",
-            },
-          }}
-        >
-          <FaShoppingCart />
-        </IconButton>
-        <ExpandMore
-          onClick={handleOpen}
+          onClick={handleShow}
           sx={{
             color: "#ffff",
             textShadow: "4px 4px 6px #ffff",
             "&:hover": {
-              color: "#39FF14",
+              color: "#17b978",
             },
           }}
         >
           <SiAddthis />
-        </ExpandMore>
-        <div>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
+        </IconButton>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header
+            closeButton
+            style={{
+              display: "flex",
+              flexDirection: "column-reverse",
+              padding: "1rem",
+            }}
           >
-            <Box
+            <Modal.Title>{productos.name}</Modal.Title>
+            <Modal.Title>
+              <strong>{productos.productType}</strong>
+            </Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body style={{ display: "flex", alignItems:'center' }}>
+          <CardMedia
+              component="img"
+              height="230"
+              sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
+              image={productos.image}
+            />
+
+            <CardContent
               sx={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: 400,
-                bgcolor: "background.paper",
-                boxShadow: 24,
-                p: 4,
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-              <CardMedia
-                component="img"
-                height="150"
-                sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
-                image={productos.image}
-              />
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                {productos.name}
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {productos.price}
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <strong>Unidades vendidas:</strong> {productos.totalSales}
               </Typography>
-              <Button onClick={handleClose}>Cerrar</Button>
-            </Box>
-          </Modal>
-        </div>
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <strong>Tiempo de Oferta:</strong> {productos.timeLeft}
+              </Typography>
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <strong>Precio:</strong> {productos.price}
+              </Typography>
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <strong>Cantidad</strong>
+              </Typography>
+              <Typography
+                sx={{
+                  color: "black",
+                  textAlign: "justify",
+                  fontSize: "0.8rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <strong>Total:</strong>
+              </Typography>
+            </CardContent>
+          </Modal.Body>
+
+
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Cerrar
+            </Button>
+            <Button style={{backgroundColor:'#17b978'}} onClick={handleClose}>
+              Añadir al Carrito
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </CardActions>
     </Card>
   );

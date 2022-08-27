@@ -40,7 +40,8 @@ const Sucripcion = (props) => {
           alignItems:'center',
           justifyContent:'center',
           backgroundImage:
-            'url("https://www.goorinbros.com.ar/skin/frontend/sns_sport/goorin/images/media/bg_suscribe.jpg")',
+            'url("https://c4.wallpaperflare.com/wallpaper/138/353/177/women-model-brunette-long-hair-women-outdoors-straw-cowboy-hats-boots-black-outfits-sitting-clara-alonso-wallpaper-preview.jpg")',
+          backgroundSize:'cover'
         }}
       >
         <h2 className={classes.titulo}>{props.titulo}</h2>

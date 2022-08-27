@@ -1,0 +1,10 @@
+.notdisplayed {
+  display: none;
+}
+
+.displayed {
+  border: none;
+  color: #ffff;
+  background-color: #17b978;
+  height: 30px;
+}

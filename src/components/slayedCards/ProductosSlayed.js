@@ -36,16 +36,16 @@ const ListProductos = () => {
         }}
       >
         <Container
-          sx={{
-            backgroundImage:
-            'url("https://images6.alphacoders.com/118/1188879.jpg")',
-          borderRadius:"25px",
-          backgroundRepeat:"no-repeat",
-          backgroundSize:"cover",
-          minHeight: "500px",
-          paddingTop: "50px"
-            
-          }}
+            sx={{
+              backgroundImage:
+                'url("https://www.goorinbros.com.ar/skin/frontend/sns_sport/goorin/images/media/bg_suscribe.jpg")',
+              borderRadius:"25px",
+              backgroundRepeat:"no-repeat",
+              backgroundSize:"cover",
+              minHeight: "500px",
+              paddingTop: "20px"
+  
+            }}
         >
           <Swiper  
             modules={[Pagination, Autoplay]}
