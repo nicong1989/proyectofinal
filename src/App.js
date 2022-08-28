@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import ContactUs from './components/ContactUs/ContactUs';
+import Footer from './components/Footer/Footer';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Prueba</h1>
-      <p>Prueba dos</p>
+      <ContactUs />
+      <Footer/>
     </div>
   );
 }
