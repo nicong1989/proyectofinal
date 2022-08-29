@@ -6,7 +6,7 @@ import {
   Row,
   Column,
   Text
-} from "./ContactUsStyles";
+} from "./ContactUsStyles"; 
 import Maps from "./Maps";
 
   
