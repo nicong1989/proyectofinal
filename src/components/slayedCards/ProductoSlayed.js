@@ -50,16 +50,16 @@ const Cardslayed = ({ slayed }) => {
       />
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
         <CardMedia
-           component="img"
-           height="230"
-           sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
-           image={slayed.image}
+          component="img"
+          height="230"
+          sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
+          image={slayed.image}
         />
       </CardContent>
 
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="body2" color="#ffff" sx={{ fontSize: "1.5rem" }}>
-          {<strong>{slayed.price}</strong>}
+          {<strong>$ {slayed.price}</strong>}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
           {[...Array(slayed.rating)].map((index) => (
@@ -70,7 +70,11 @@ const Cardslayed = ({ slayed }) => {
 
       <CardActions
         disableSpacing
-        sx={{ display: "flex", flexDirection: "row", justifyContent:'space-between' }}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
       >
         <button onClick={handleShow} className={display}>
           <strong>COMPRAR</strong>
@@ -104,8 +108,8 @@ const Cardslayed = ({ slayed }) => {
             </Modal.Title>
           </Modal.Header>
 
-          <Modal.Body style={{ display: "flex", alignItems:'center' }}>
-          <CardMedia
+          <Modal.Body style={{ display: "flex", alignItems: "center" }}>
+            <CardMedia
               component="img"
               height="250"
               sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
@@ -160,16 +164,7 @@ const Cardslayed = ({ slayed }) => {
               >
                 <strong>Precio:</strong> {slayed.price}
               </Typography>
-              <Typography
-                sx={{
-                  color: "black",
-                  textAlign: "justify",
-                  fontSize: "0.8rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <strong>Cantidad</strong>
-              </Typography>
+
               <Typography
                 sx={{
                   color: "black",
@@ -183,12 +178,14 @@ const Cardslayed = ({ slayed }) => {
             </CardContent>
           </Modal.Body>
 
-
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Cerrar
             </Button>
-            <Button style={{backgroundColor:'#17b978'}} onClick={handleClose}>
+            <Button
+              style={{ backgroundColor: "#17b978" }}
+              onClick={handleClose}
+            >
               Añadir al Carrito
             </Button>
           </Modal.Footer>
