@@ -1,0 +1,185 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE TIGER",
+      "price": 6900,
+      "image": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 2,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE EAGLE",
+      "price": 6900,
+      "image": "https://i.imgur.com/5Kon2xl.png",
+      "rating": 5,
+      "timeLeft": 27,
+      "totalSales": 3258 
+    },
+    {
+      "id": 3,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE PANTER",
+      "price": 6900,
+      "image": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 4,
+      "timeLeft": 27,
+      "totalSales": 5897 
+    },
+    {
+      "id": 4,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE COCK",
+      "price": 6900,
+      "image": "https://i.imgur.com/5Kon2xl.png",
+      "rating": 2,
+      "timeLeft": 27,
+      "totalSales": 5787 
+      
+    },
+    {
+      "id": 5,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE TIGER",
+      "price": 6900,
+      "image": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 1058 
+    },
+    {
+      "id": 6,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE EAGLE",
+      "price": 6900,
+      "image": "https://i.imgur.com/5Kon2xl.png",
+      "rating": 5,
+      "timeLeft": 27,
+      "totalSales": 898 
+    },
+    {
+      "id": 7,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE PANTER",
+      "price": 6900,
+      "image": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 4,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 8,
+      "productType": "GOORAS GOORIN",
+      "model": "BASEBALL",
+      "name": "THE COCK",
+      "price": 6900,
+      "image": "https://i.imgur.com/5Kon2xl.png",
+      "rating": 2,
+      "timeLeft": 27,
+      "totalSales": 7479 
+      
+    }       
+   
+  ],
+  "slayed": [
+    {
+      "id": 1,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "GO",
+      "price": 6900,
+      "image": "https://i.imgur.com/k4C1Yau.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 2,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "DO IT",
+      "price": 6900,
+      "image": "https://i.imgur.com/VqkHHew.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    }, {
+      "id": 3,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "COMFORT",
+      "price": 6900,
+      "image": "https://i.imgur.com/k4C1Yau.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 4,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "WIN",
+      "price": 6900,
+      "image": "https://i.imgur.com/VqkHHew.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 5,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "GO",
+      "price": 6900,
+      "image": "https://i.imgur.com/k4C1Yau.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 6,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "DO IT",
+      "price": 6900,
+      "image": "https://i.imgur.com/VqkHHew.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    }, {
+      "id": 7,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "COMFORT",
+      "price": 6900,
+      "image": "https://i.imgur.com/k4C1Yau.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    },
+    {
+      "id": 8,
+      "productType": "GOORAS GOORIN",
+      "model": "OUTCASE",
+      "name": "WIN",
+      "price": 6900,
+      "image": "https://i.imgur.com/VqkHHew.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 7479 
+    }
+    ]
+}
+
+
