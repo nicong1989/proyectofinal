@@ -1,0 +1,37 @@
+import React from 'react';
+import styled from "styled-components";
+
+export const listaLinksHeader = [
+    ['Header 1', '#'], ['Header 2', '#']
+];
+
+export const LinksHeader = styled.div`
+    background-color: lightblue;               //color temporal
+    display: flex;
+    padding: .5rem 2rem;
+    justify-content: flex-end;
+    gap: 30px;
+    a{
+        text-decoration: none;
+        color: #000;
+    };
+    a:hover{
+        color: white;
+        cursor: pointer;
+        transition:all .1s ease-in-out;
+        transform:scale(1.2);
+    }
+    
+`
+
+const Header = () => {
+    return (
+        <LinksHeader>
+            {listaLinksHeader.map((link, index) => (
+                <a key={index} href={link[1]}>{link[0]}</a>))}
+        </LinksHeader>
+    );
+}
+
+export default Header;
+

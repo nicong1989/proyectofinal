@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import NavBar from './components/NavBar/NavBar';
+import Header from './components/Header/Header';
+import Gallery from './components/Carousel/Carousel';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Prueba</h1>
-      <p>Prueba dos</p>
+    <div>
+      <Header />
+      <NavBar />
+      <Gallery />
     </div>
   );
 }
