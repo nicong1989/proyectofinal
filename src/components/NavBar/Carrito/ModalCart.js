@@ -39,7 +39,7 @@ const TituloModal = styled.div`
 `
 const BotonCerrar = styled.button`
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
     width: 30px;
     height: 30px;
@@ -68,7 +68,7 @@ const ModalCart = ({estado, cambiarEstado}) => {
                             <h3> Tu Carrito </h3>
                         </TituloModal>
                         <BotonCerrar onClick={()=> cambiarEstado(false)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16" style={{marginBottom: '25px'}}>
                                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </BotonCerrar>

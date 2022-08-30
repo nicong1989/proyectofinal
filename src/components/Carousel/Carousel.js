@@ -16,7 +16,9 @@ const estiloGallery = {
         display: 'flex',
         maxWidth: '420px',
         maxHeight: '250px',
-        marginLeft: '10px'
+        marginLeft: '2.5rem',
+        MarginRight: '2.5rem',
+        marginTop: '20px'
     },
     img: {
         objectFit: 'cover',
@@ -57,9 +59,9 @@ class Gallery extends React.Component {
             <AliceCarousel
                 items={this.state.galleryItems}
                 responsive={this.responsive}
-                autoPlayInterval={2000}
+                autoPlayInterval={5000}
                 autoPlayDirection="ltr"
-                autoPlay={false}
+                autoPlay={true}
                 fadeOutAnimation={true}
                 mouseDragEnabled={true}
                 playButtonEnabled={false}

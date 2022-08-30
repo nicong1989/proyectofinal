@@ -9,7 +9,8 @@ const StyledCart = styled.div`
     padding: 1rem 1rem;
     height: 2rem;
     width: 3rem; 
-    margin-top: 15px;
+    margin-top: 2.3rem;
+    margin-left: 1rem ;
     font-size: 30px;
     align-items: center;
     justify-content: center;

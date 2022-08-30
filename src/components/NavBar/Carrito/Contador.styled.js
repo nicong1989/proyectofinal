@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 export const StyledCont = styled.div`
     position: relative;
-    right: 57px;
-    top: 28px;
-    font-size: 6.5px;
+    right: 41px;
+    top: 46px;
+    font-size: .5px;
 
 `

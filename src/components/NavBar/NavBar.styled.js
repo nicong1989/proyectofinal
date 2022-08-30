@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 export const StyledNavBar = styled.div`   //caja contenedora
     display: flex;
-
 `
 // export const NavItems = styled.div`            //era el estilo de los links que luego los pase al comp Links.js
 //     display: flex;

@@ -11,9 +11,9 @@ export const StyledLinks = styled.div`
     background-color: lightblue;                      //color temporal
     justify-content: space-evenly;
     padding: 1rem 1rem;
-    width: 80rem;
-    height: 2rem;
-    margin-top: 1rem;   
+    width: 78rem;
+    height: 3.5rem;
+    margin-top: 1.5rem;   
     border-radius: 25px;
     a{
         text-decoration: none;

@@ -7,10 +7,12 @@ export const listaLinksHeader = [
 
 export const LinksHeader = styled.div`
     background-color: lightblue;               //color temporal
-    display: flex;
+    position: relative;
+    display: flex  ;
     padding: .5rem 2rem;
     justify-content: flex-end;
     gap: 30px;
+
     a{
         text-decoration: none;
         color: #000;
