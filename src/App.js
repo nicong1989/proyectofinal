@@ -8,6 +8,8 @@ import Titulo from "./components/Titulo/Titulo";
 import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
 import Galeria from './components/Galeria.js'
 import Titulo1 from './components/Titulo1.js';
+import './components/Carousel/carousel.css'
+
 
 
 
