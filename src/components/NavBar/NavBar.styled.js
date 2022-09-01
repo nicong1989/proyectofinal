@@ -2,6 +2,9 @@ import styled from "styled-components"
 
 export const StyledNavBar = styled.div`   //caja contenedora
     display: flex;
+    @media (max-width: 900px){
+        justify-content: space-between;
+    }
 `
 // export const NavItems = styled.div`            //era el estilo de los links que luego los pase al comp Links.js
 //     display: flex;
@@ -14,10 +17,15 @@ export const StyledNavBar = styled.div`   //caja contenedora
 // `
 
 export const DivImg = styled.div`         // caja de logo
-    width: 100px;
+    width: 130px;
     height: 100px;
     align-self: flex-start;
-    margin: 0 20px 0 20px;  
+    margin: 0 20px 0 20px; 
+    @media (max-width: 900px){
+        align-self: center;
+        width: 100px;
+        margin-left: 2rem;
+    }
 `
 export const StyledLogo = styled.img`    //logo
     object-fit: cover;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 export const listaLinksHeader = [
-    ['Header 1', '#'], ['Header 2', '#']
+    [ 'Header 1', '#'], ['Newsletter', '#suscripcion']
 ];
 
 export const LinksHeader = styled.div`

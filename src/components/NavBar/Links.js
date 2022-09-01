@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components'
 
 export const listaLinks = [
-    ['Menu 1', '#'], ['Menu 2', '#'], ['Menu 3', '#']
+    ['NUESTROS PRODUCTOS', '#productos'], ['Menu 2', '#'], ['Menu 3', '#']
 ];
 
 
@@ -11,7 +11,7 @@ export const StyledLinks = styled.div`
     background-color: lightblue;                      //color temporal
     justify-content: space-evenly;
     padding: 1rem 1rem;
-    width: 78rem;
+    width: 77rem;
     height: 3.5rem;
     margin-top: 1.5rem;   
     border-radius: 25px;
@@ -25,6 +25,9 @@ export const StyledLinks = styled.div`
         transition:all .1s ease-in-out;
         transform:scale(1.2);
     };
+    @media (max-width: 900px){
+        display: none;
+    }
 `
 
 const Links = () => {

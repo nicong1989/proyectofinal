@@ -16,19 +16,6 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 const images = [
     imgCarr1 , imgCarr2, imgCarr3, imgCarr4, imgCarr5, imgCarr6, imgCarr7, imgCarr8, imgCarr9, imgCarr10
-    // { key: 2 , link: {imgCarr2} },
-    // { key: 3 , link: {imgCarr3} },
-    // { key: 4 , link: {imgCarr4} },
-    // { key: 5 , link: {imgCarr5} },
-    // { key: 6 , link: {imgCarr6} },
-    // { key: 7 , link: {imgCarr7} },
-    // { key: 8 , link: {imgCarr8} },
-    // { key: 9 , link: {imgCarr9} },
-    // { key: 10 , link: {imgCarr10} },
-
-
-
-
     // "https://www.losandes.com.ar/resizer/r9kMzdc2Dszt4tTK8wAhpg9JIB0=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/ASHUWDQ2MBATLBPGWLFBTXGDNM.jpg",
     // "https://pbs.twimg.com/profile_images/1412629073956950022/8KqC1cmp_400x400.jpg",
     // "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/bltb3190eac5e0819b4/62650f53234cf04ce5461098/Angel_Di_Maria_Argentina_2022.jpg",
@@ -75,7 +62,7 @@ class Gallery extends React.Component {
             <AliceCarousel
                 items={this.state.galleryItems}
                 responsive={this.responsive}
-                autoPlayInterval={5000}
+                autoPlayInterval={4000}
                 autoPlayDirection="ltr"
                 autoPlay={true}
                 fadeOutAnimation={true}

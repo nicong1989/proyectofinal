@@ -1,11 +1,14 @@
 import React , {useState} from 'react';
 import styled from 'styled-components';
-import ModalCart from './Carrito/ModalCart';
-import Contador from './Carrito/Contador';
+import ModalBurger from './ModalBurger';
 
 
 
-const StyledCart = styled.div`
+const StyledBurgerCont = styled.div`
+    @media (min-width: 900px){
+        display: none;
+    };
+    @media (max-width: 900px){
     display: flex;
     padding: 1rem 1rem;
     height: 2rem;
@@ -16,10 +19,16 @@ const StyledCart = styled.div`
     font-size: 30px;
     align-items: center;
     justify-content: center;
-
+    }
 `
-const StyledCartButton = styled.button`
-background: #999999;
+
+const StyledBurger = styled.button`
+    @media (min-width: 900px){
+        display: none;
+    };
+    @media (max-width: 900px){
+       margin-left: 1.5rem;
+       background: #999999;
  background-image: -webkit-linear-gradient(top, #999999, #ffffff);
   background-image: -moz-linear-gradient(top, #999999, #ffffff);
   background-image: -ms-linear-gradient(top, #999999, #ffffff);
@@ -43,23 +52,26 @@ background: #999999;
   text-decoration: none;
   cursor: pointer;
   };
+}
 `
 
 
-const BotonCarrito = () => {
-    const [estadoModalCart , cambiarEstadoModalCart] = useState(false); 
-    return (
-        <StyledCart>
-            <Contador />
-            <StyledCartButton onClick={() => cambiarEstadoModalCart(!estadoModalCart)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                </svg>
-            </StyledCartButton>
 
-            <ModalCart estado={estadoModalCart} cambiarEstado={cambiarEstadoModalCart} />
-        </StyledCart>
+const Burger = () => {
+    const [estadoModalBurger , cambiarEstadoModalBurger] = useState(false)
+    return (
+        <>
+            <StyledBurgerCont onClick={() => cambiarEstadoModalBurger(!estadoModalBurger)}>
+                <StyledBurger >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </StyledBurger>
+
+                <ModalBurger estado={estadoModalBurger} cambiarEstado={cambiarEstadoModalBurger}/>
+            </StyledBurgerCont>
+        </>
     );
 }
 
-export default BotonCarrito;
+export default Burger;
