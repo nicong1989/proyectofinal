@@ -18,6 +18,7 @@ const ContenedorBurger = styled.div`
     a{
         text-decoration: none;
         color: #000;
+        
     };
     a:hover{
         color: white;
@@ -35,17 +36,17 @@ const ModalBurger = ({ estado, cambiarEstado }) => {
                 <ContenedorBurger>
                     <ul>
                         <li>
-                            <a href='#productos'>NUESTROS PRODUCTOS</a>
+                            <a href='#productos' style={{textShadow: "4px 4px 6px #000000"}}>NUESTROS PRODUCTOS</a>
                         </li>
 
                         <li>
 
-                            <a href='#'>Menu 2</a>
+                            <a href='#' style={{textShadow: "4px 4px 6px #000000"}}>Menu 2</a>
                         </li>
 
                         <li>
 
-                            <a href='#'>Menu 3</a>
+                            <a href='#' style={{textShadow: "4px 4px 6px #000000"}}>Menu 3</a>
                         </li>
                     </ul>
                 </ContenedorBurger>

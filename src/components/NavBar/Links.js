@@ -18,6 +18,7 @@ export const StyledLinks = styled.div`
     a{
         text-decoration: none;
         color: #000;
+        text-shadow: 4px 4px 6px #000000;
     };
     a:hover{
         color: white;
