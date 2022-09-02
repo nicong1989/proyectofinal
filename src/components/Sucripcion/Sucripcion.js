@@ -44,7 +44,7 @@ const Sucripcion = (props) => {
           backgroundSize:'cover'
         }}
       >
-        <h2 className={classes.titulo}>{props.titulo}</h2>
+        <h2 className={classes.titulo} id='suscripcion'>{props.titulo}</h2>
         <h6 className={classes.texto}>{props.texto}</h6>
         <ContactForm />
       </Box>
