@@ -20,10 +20,7 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-<<<<<<< HEAD
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
-=======
+
     "react-material-ui-carousel": "^3.4.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -34,7 +31,7 @@
     "swiper": "^8.3.2",
     "use-spring": "^0.2.4",
     "validate-fields": "^5.1.1",
->>>>>>> main
+
     "web-vitals": "^2.1.4"
   },
   "scripts": {
