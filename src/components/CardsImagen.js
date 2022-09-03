@@ -7,6 +7,7 @@ const MyFigure = styled.div`
   width: 60%;
   height: 30%;
   text-align: center;
+ 
   margin: 20px;
   &:hover {
     box-shadow: 5px 5px 8px;
