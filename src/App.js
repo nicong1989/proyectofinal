@@ -2,7 +2,6 @@ import React from "react";
 import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
-import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
 import Galeria from './components/Galeria.js'
 import Titulo1 from './components/Titulo1.js';
 
@@ -24,7 +23,7 @@ const App = () => {
         titulo="COLECCIÓN"
         coleccion="SLAYED"
       />
-      <ProductosSlayed />
+      
 
       <Sucripcion
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
