@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyledNavBar = styled.div`   //caja contenedora
     display: flex;
+    margin-top: 40px;
     @media (max-width: 900px){
         justify-content: space-between;
     }

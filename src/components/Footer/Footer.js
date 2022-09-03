@@ -24,7 +24,7 @@ const Footer = () => {
             <FooterLink href="#">Locales</FooterLink>
           </Column>
           <Column>
-            <Heading>CATEGORIAS</Heading>
+            <Heading id='contacto'>CATEGORIAS</Heading>
             <FooterLink href="#">Colecciones</FooterLink>
             <FooterLink href="#">Estilos</FooterLink>
             <FooterLink href="#">Pilusos</FooterLink>

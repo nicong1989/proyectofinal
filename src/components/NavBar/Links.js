@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components'
 
 export const listaLinks = [
-    ['NUESTROS PRODUCTOS', '#productos'], ['Menu 2', '#'], ['Menu 3', '#']
+    ['NUESTROS PRODUCTOS', '#productos'], ['Menu 2', '#'], ['CONTACTO', '#contacto']
 ];
 
 
