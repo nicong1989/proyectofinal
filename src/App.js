@@ -1,39 +1,34 @@
 import React from "react";
-import Sucripcion from "./components/Sucripcion/Sucripcion";
+import Suscripcion from "./components/Suscripcion/Suscripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
-import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
-
-
+import Cart from "./components/Cart"
+import Aviso from "./components/Aviso";
+import Pruebacart from "./components/Pruebacart";
 
 
 const App = () => {
-
   return (
-    <>
-
-      <Titulo
-        titulo="COLECCIÓN"
-        coleccion="ANIMAL FARM"
-      />
+    <>  
+   
+      
+      <Aviso />
+      <Pruebacart />
+      <Titulo titulo="COLECCIÓN" coleccion="ANIMAL FARM" />
       <Productos />
 
-      <Titulo
-        titulo="COLECCIÓN"
-        coleccion="SLAYED"
-      />
-      <ProductosSlayed />
+      <Titulo titulo="COLECCIÓN" coleccion="SLAYED" />
+      <Productos />
 
-      <Sucripcion
+      <Suscripcion
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
         texto="Suscribite a nuestro newsletter y enteráte de todos los beneficios"
       />
+     <Cart />
 
-  
- 
+   
     </>
   );
 };
-
 
 export default App;

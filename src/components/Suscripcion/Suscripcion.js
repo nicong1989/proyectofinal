@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 import "animate.css";
-import ContactForm from "../pruebaFormulario/ContactForm"
+import ContactForm from "../Formulario/ContactForm"
 
 const useStyles = makeStyles({
   titulo: {
