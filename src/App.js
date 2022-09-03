@@ -1,7 +1,11 @@
+
 import React from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Header from './components/Header/Header';
 import Gallery from './components/Carousel/Carousel';
+import './App.css';
+import ContactUs from './components/ContactUs/ContactUs';
+import Footer from './components/Footer/Footer';
 import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
@@ -14,7 +18,11 @@ import './components/Carousel/carousel.css'
 
 
 const App = () => {
+
   return (
+
+
+
     <>
 
       <Header />
@@ -41,10 +49,12 @@ const App = () => {
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
         texto="Suscribite a nuestro newsletter y enteráte de todos los beneficios"
       />
-
+      <ContactUs />
+      <Footer/>
   
  
     </>
+
   );
 };
 
