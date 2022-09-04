@@ -2,16 +2,19 @@ import React from 'react';
 import styled from "styled-components";
 
 export const listaLinksHeader = [
-    [ 'Header 1', '#'], ['Newsletter', '#suscripcion']
+    [ 'Inicio', '#'], ['Newsletter', '#suscripcion']
 ];
 
 export const LinksHeader = styled.div`
     background-color: lightblue;               //color temporal
-    position: relative;
+    position: fixed;
     display: flex  ;
     padding: .5rem 2rem;
     justify-content: flex-end;
     gap: 30px;
+    width: 100vw;
+    top: 0px;
+    z-index:50;
 
     a{
         text-decoration: none;

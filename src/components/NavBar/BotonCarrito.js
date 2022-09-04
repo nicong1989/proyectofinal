@@ -16,7 +16,6 @@ const StyledCart = styled.div`
     font-size: 30px;
     align-items: center;
     justify-content: center;
-
 `
 const StyledCartButton = styled.button`
 background: #999999;
@@ -33,6 +32,8 @@ background: #999999;
   padding: 9px 20px 10px 25px;
   text-decoration: none;
   border: none;
+  position: fixed;
+  z-index: 999;
   &:hover {
   background: #ffffff;
   background-image: -webkit-linear-gradient(top, #ffffff, #999999);
