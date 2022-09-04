@@ -9,7 +9,7 @@ export default function Layout() {
   return (
     <Box
       sx={{
-        backgroundColor: "#17b978",
+        backgroundColor: "#2c5364",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

@@ -195,16 +195,16 @@
   ],
   "cart": [
     {
-      "id": "9",
-      "codeProduct": 10,
-      "name": "DO IT",
+      "id": "4",
+      "codeProduct": 5,
+      "name": "THE TIGER",
       "marca": "GOORAS GOORIN",
       "price": 100,
-      "img": "https://i.imgur.com/VqkHHew.png",
-      "rating": 4,
-      "timeLeft": 20,
+      "img": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 5,
+      "timeLeft": 15,
       "totalSales": 1558,
-      "model": "OUTCASE",
+      "model": "BASEBALL",
       "quantity": 1
     },
     {

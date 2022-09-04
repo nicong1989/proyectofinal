@@ -2,11 +2,11 @@ import React from 'react';
 import styled from "styled-components";
 
 export const listaLinksHeader = [
-    [ 'Header 1', '#'], ['Newsletter', '#suscripcion']
+    [ 'HEADER 1', '#'], ['NEWSLETTER', '#suscripcion']
 ];
 
 export const LinksHeader = styled.div`
-    background-color: lightblue;               //color temporal
+    background-color: #222;               //color temporal
     position: relative;
     display: flex  ;
     padding: .5rem 2rem;
@@ -15,7 +15,7 @@ export const LinksHeader = styled.div`
 
     a{
         text-decoration: none;
-        color: #000;
+        color: #17b978;
         text-shadow: 4px 4px 6px #000000;
     };
     a:hover{

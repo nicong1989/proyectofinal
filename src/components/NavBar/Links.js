@@ -2,13 +2,13 @@ import React from "react";
 import styled from 'styled-components'
 
 export const listaLinks = [
-    ['NUESTROS PRODUCTOS', '#productos'], ['Menu 2', '#'], ['Menu 3', '#']
+    ['NUESTROS PRODUCTOS', '#productos'], ['MENU 2', '#'], ['MENU 3', '#']
 ];
 
 
 export const StyledLinks = styled.div`
     display: flex;
-    background-color: lightblue;                      //color temporal
+    background-color: #2c5364;                      //color temporal
     justify-content: space-evenly;
     padding: 1rem 1rem;
     width: 77rem;

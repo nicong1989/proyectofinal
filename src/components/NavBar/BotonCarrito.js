@@ -1,7 +1,7 @@
 import React , {useState} from 'react';
 import styled from 'styled-components';
-import ModalCart from './Carrito/ModalCart';
-import Contador from './Carrito/Contador';
+import ModalCart from './ModalCart';
+import Contador from './Contador';
 
 
 

@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyledNavBar = styled.div`   //caja contenedora
     display: flex;
+    background-color: black;
     @media (max-width: 900px){
         justify-content: space-between;
     }
@@ -17,10 +18,10 @@ export const StyledNavBar = styled.div`   //caja contenedora
 // `
 
 export const DivImg = styled.div`         // caja de logo
-    width: 130px;
+    width: 100px;
     height: 100px;
     align-self: flex-start;
-    margin: 0 20px 0 20px; 
+    margin: 10 20px 0 20px; 
     @media (max-width: 900px){
         align-self: center;
         width: 100px;
@@ -28,7 +29,8 @@ export const DivImg = styled.div`         // caja de logo
     }
 `
 export const StyledLogo = styled.img`    //logo
-    object-fit: cover;
-    height: 100%;
+    object-fit: contain;
+    height: 80%;
+    margin-top: 5px;
 `
 
