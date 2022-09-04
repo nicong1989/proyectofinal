@@ -1,7 +1,12 @@
 import React , {useState} from 'react';
 import styled from 'styled-components';
+<<<<<<< HEAD
+import ModalCart from './ModalCart';
+import Contador from './Contador';
+=======
 import ModalCart from './Carrito/ModalCart';
 import Contador from './Carrito/Contador';
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c
 
 
 
@@ -16,6 +21,10 @@ const StyledCart = styled.div`
     font-size: 30px;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
+
+=======
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c
 `
 const StyledCartButton = styled.button`
 background: #999999;
@@ -32,8 +41,11 @@ background: #999999;
   padding: 9px 20px 10px 25px;
   text-decoration: none;
   border: none;
+<<<<<<< HEAD
+=======
   position: fixed;
   z-index: 999;
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c
   &:hover {
   background: #ffffff;
   background-image: -webkit-linear-gradient(top, #ffffff, #999999);

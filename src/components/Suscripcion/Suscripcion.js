@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/system";
 import { makeStyles } from "@mui/styles";
 import "animate.css";
-import ContactForm from "../pruebaFormulario/ContactForm"
+import ContactForm from "../Formulario/ContactForm"
 
 const useStyles = makeStyles({
   titulo: {
@@ -45,7 +45,11 @@ const Sucripcion = (props) => {
         }}
         id='suscripcion'
       >
+<<<<<<< HEAD:src/components/Suscripcion/Suscripcion.js
+        <h2 className={classes.titulo} id='suscripcion'>{props.titulo}</h2>
+=======
         <h2 className={classes.titulo} >{props.titulo}</h2>
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c:src/components/Sucripcion/Sucripcion.js
         <h6 className={classes.texto}>{props.texto}</h6>
         <ContactForm />
       </Box>
