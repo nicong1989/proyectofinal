@@ -46,7 +46,11 @@ const ModalBurger = ({ estado, cambiarEstado }) => {
 
                         <li>
 
+<<<<<<< HEAD
                             <a href='#' style={{textShadow: "4px 4px 6px #000000"}}>Menu 3</a>
+=======
+                            <a href='#contacto' style={{textShadow: "4px 4px 6px #000000"}}>CONTACTO</a>
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c
                         </li>
                     </ul>
                 </ContenedorBurger>

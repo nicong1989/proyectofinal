@@ -43,8 +43,13 @@ const Sucripcion = (props) => {
             'url("https://c4.wallpaperflare.com/wallpaper/138/353/177/women-model-brunette-long-hair-women-outdoors-straw-cowboy-hats-boots-black-outfits-sitting-clara-alonso-wallpaper-preview.jpg")',
           backgroundSize:'cover'
         }}
+        id='suscripcion'
       >
+<<<<<<< HEAD:src/components/Suscripcion/Suscripcion.js
         <h2 className={classes.titulo} id='suscripcion'>{props.titulo}</h2>
+=======
+        <h2 className={classes.titulo} >{props.titulo}</h2>
+>>>>>>> c53e3d0d89f1981aa98a4e7b1978b89e4910f21c:src/components/Sucripcion/Sucripcion.js
         <h6 className={classes.texto}>{props.texto}</h6>
         <ContactForm />
       </Box>
