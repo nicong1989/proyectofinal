@@ -4,18 +4,14 @@ import styled from "styled-components";
 export const listaLinks = [
   ["NUESTROS PRODUCTOS", "#productos"],
   ["MENU 2", "#"],
-  ["MENU 3", "#"][("NUESTROS PRODUCTOS", "#productos")],
-  ["Menu 2", "#"],
+  ["MENU 3", "#"],
   ["CONTACTO", "#contacto"],
 ];
 
 export const StyledLinks = styled.div`
   display: flex;
-
   background-color: #2c5364; //color temporal
-
   background-color: lightblue; //color temporal
-
   justify-content: space-evenly;
   padding: 1rem 1rem;
   width: 77rem;
