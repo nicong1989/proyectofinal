@@ -13,10 +13,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./styles.css";
 
-const CardProductos = ({ data, addToCart, addToFav}) => {
-  
-  const {img, name, price, rating, marca, model, totalSales, timeLeft } = data;
-  
+const CardProductos = ({ data, addToCart, addToFav }) => {
+  const { img, name, price, rating, marca, model, totalSales, timeLeft } = data;
 
   const [display, setDisplay] = useState("notdisplayed");
   const showButton = (e) => {
@@ -31,9 +29,6 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-
-
 
   return (
     <Card
@@ -54,7 +49,6 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
       <CardHeader
         title={<strong>{name}</strong>}
         subheader={<Typography color="#ffff">{model}</Typography>}
-       
         sx={{ color: "white" }}
       ></CardHeader>
       <CardContent
@@ -66,7 +60,7 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
           margin: "auto",
         }}
       >
-       <FaStar />
+        <FaStar />
       </CardContent>
 
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
@@ -133,7 +127,7 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
             <CardMedia
               component="img"
               height="230"
-              sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
+              sx={{ maxWidth: "40%", filter: "saturate(250%)" }}
               image={img}
             />
 
@@ -150,10 +144,9 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
                   fontSize: "0.8rem",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Gorras unisex Goorin Baseball The Freedom Eagle con detalle
+                bordado de águila. Diseñadas en San Francisco. Composición: 57%
+                poliéster, 43% algodón. Ajustables.
               </Typography>
               <Typography
                 sx={{
@@ -185,16 +178,7 @@ const CardProductos = ({ data, addToCart, addToFav}) => {
               >
                 <strong>Precio:</strong> {price}
               </Typography>
-              <Typography
-                sx={{
-                  color: "black",
-                  textAlign: "justify",
-                  fontSize: "0.8rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <strong>Cantidad</strong>
-              </Typography>
+           
             </CardContent>
           </Modal.Body>
 
