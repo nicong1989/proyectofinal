@@ -195,21 +195,8 @@
   ],
   "cart": [
     {
-      "id": "4",
-      "codeProduct": 5,
-      "name": "THE TIGER",
-      "marca": "GOORAS GOORIN",
-      "price": 100,
-      "img": "https://i.imgur.com/C4UBeRB.png",
-      "rating": 5,
-      "timeLeft": 15,
-      "totalSales": 1558,
-      "model": "BASEBALL",
-      "quantity": 1
-    },
-    {
-      "id": "10",
-      "codeProduct": 11,
+      "id": "14",
+      "codeProduct": 15,
       "name": "COMFORT",
       "marca": "GOORAS GOORIN",
       "price": 100,
@@ -218,6 +205,32 @@
       "timeLeft": 20,
       "totalSales": 1558,
       "model": "OUTCASE",
+      "quantity": 1
+    },
+    {
+      "id": "5",
+      "codeProduct": 6,
+      "name": "THE EAGLE",
+      "marca": "GOORAS GOORIN",
+      "price": 100,
+      "img": "https://i.imgur.com/5Kon2xl.png",
+      "rating": 3,
+      "timeLeft": 27,
+      "totalSales": 3202,
+      "model": "BASEBALL",
+      "quantity": 1
+    },
+    {
+      "id": "6",
+      "codeProduct": 7,
+      "name": "THE PANTER",
+      "marca": "GOORAS GOORIN",
+      "price": 100,
+      "img": "https://i.imgur.com/C4UBeRB.png",
+      "rating": 4,
+      "timeLeft": 20,
+      "totalSales": 1558,
+      "model": "BASEBALL",
       "quantity": 1
     }
   ],
