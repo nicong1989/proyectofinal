@@ -13,7 +13,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./styles.css";
 
-const CardProductos = ({ productos }) => {
+const CardProductos = ({ data, addToCart, addToFav }) => {
+  const { img, name, price, rating, marca, model, totalSales, timeLeft } = data;
+
   const [display, setDisplay] = useState("notdisplayed");
   const showButton = (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ const CardProductos = ({ productos }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   return (
     <Card
       onMouseEnter={(e) => showButton(e)}
@@ -44,25 +47,37 @@ const CardProductos = ({ productos }) => {
       }}
     >
       <CardHeader
-        title={<strong>{productos.name}</strong>}
-        subheader={<Typography color="#ffff">{productos.model}</Typography>}
+        title={<strong>{name}</strong>}
+        subheader={<Typography color="#ffff">{model}</Typography>}
         sx={{ color: "white" }}
-      />
+      ></CardHeader>
+      <CardContent
+        sx={{
+          position: "absolute",
+          top: "0",
+          cursor: "pointer",
+          right: "0",
+          margin: "auto",
+        }}
+      >
+        <FaStar />
+      </CardContent>
+
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
         <CardMedia
           component="img"
           height="230"
           sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
-          image={productos.image}
+          image={img}
         />
       </CardContent>
 
       <CardContent sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="body2" color="#ffff" sx={{ fontSize: "1.5rem" }}>
-          {<strong>$ {productos.price}</strong>}
+          {<strong>$ {price}</strong>}
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
-          {[...Array(productos.rating)].map((index) => (
+          {[...Array(rating)].map((index) => (
             <FaStar id={index + 1} key={index} />
           ))}
         </Typography>
@@ -76,7 +91,7 @@ const CardProductos = ({ productos }) => {
           justifyContent: "space-between",
         }}
       >
-        <button onClick={handleShow} className={display}>
+        <button onClick={() => addToCart(data)} className={display} id>
           <strong>COMPRAR</strong>
         </button>
 
@@ -102,9 +117,9 @@ const CardProductos = ({ productos }) => {
               padding: "1rem",
             }}
           >
-            <Modal.Title>{productos.name}</Modal.Title>
+            <Modal.Title>{name}</Modal.Title>
             <Modal.Title>
-              <strong>{productos.productType}</strong>
+              <strong>{marca}</strong>
             </Modal.Title>
           </Modal.Header>
 
@@ -112,8 +127,8 @@ const CardProductos = ({ productos }) => {
             <CardMedia
               component="img"
               height="230"
-              sx={{ maxWidth: "79%", filter: "saturate(250%)" }}
-              image={productos.image}
+              sx={{ maxWidth: "40%", filter: "saturate(250%)" }}
+              image={img}
             />
 
             <CardContent
@@ -129,10 +144,9 @@ const CardProductos = ({ productos }) => {
                   fontSize: "0.8rem",
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Gorras unisex Goorin Baseball The Freedom Eagle con detalle
+                bordado de águila. Diseñadas en San Francisco. Composición: 57%
+                poliéster, 43% algodón. Ajustables.
               </Typography>
               <Typography
                 sx={{
@@ -142,7 +156,7 @@ const CardProductos = ({ productos }) => {
                   marginTop: "1rem",
                 }}
               >
-                <strong>Unidades vendidas:</strong> {productos.totalSales}
+                <strong>Unidades vendidas:</strong> {totalSales}
               </Typography>
               <Typography
                 sx={{
@@ -152,7 +166,7 @@ const CardProductos = ({ productos }) => {
                   marginTop: "1rem",
                 }}
               >
-                <strong>Tiempo de Oferta:</strong> {productos.timeLeft}
+                <strong>Tiempo de Oferta:</strong> {timeLeft}
               </Typography>
               <Typography
                 sx={{
@@ -162,18 +176,9 @@ const CardProductos = ({ productos }) => {
                   marginTop: "1rem",
                 }}
               >
-                <strong>Precio:</strong> {productos.price}
+                <strong>Precio:</strong> {price}
               </Typography>
-              <Typography
-                sx={{
-                  color: "black",
-                  textAlign: "justify",
-                  fontSize: "0.8rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <strong>Cantidad</strong>
-              </Typography>
+           
             </CardContent>
           </Modal.Body>
 
@@ -183,7 +188,7 @@ const CardProductos = ({ productos }) => {
             </Button>
             <Button
               style={{ backgroundColor: "#17b978" }}
-              onClick={handleClose}
+              onClick={() => addToCart(data)}
             >
               Añadir al Carrito
             </Button>

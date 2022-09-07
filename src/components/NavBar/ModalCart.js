@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Carrito from './Carrito';
 
 const Overlay = styled.div`
     width: 100vw;
@@ -74,7 +74,7 @@ const ModalCart = ({estado, cambiarEstado}) => {
                         </BotonCerrar>
 
 
-                        {/* ACA VA EL CARRITO  */}
+                       <Carrito />
 
 
                     </ContenedorModal>

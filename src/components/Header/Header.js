@@ -6,19 +6,18 @@ export const listaLinksHeader = [
 ];
 
 export const LinksHeader = styled.div`
-    background-color: lightblue;               //color temporal
-    position: fixed;
+    background-color: #131313;               //color temporal
+    position: relative;
     display: flex  ;
     padding: .5rem 2rem;
     justify-content: flex-end;
     gap: 30px;
-    width: 100vw;
+    width: 100%;
     top: 0px;
     z-index:50;
-
     a{
         text-decoration: none;
-        color: #000;
+        color: #ffff;
         text-shadow: 4px 4px 6px #000000;
     };
     a:hover{
@@ -40,4 +39,3 @@ const Header = () => {
 }
 
 export default Header;
-

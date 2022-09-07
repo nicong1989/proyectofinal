@@ -15,22 +15,22 @@ const Titulo = (props) => {
       sx={{
         width: 1,
         height: "10vh",
-        backgroundColor: '#FFFFFF',
+        backgroundColor: 'black',
         transition: '.5s ',
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0.5rem', xl:'0.5rem' },
-        marginBottom:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0.5rem', xl:'0.5rem' }
+        marginTop:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0rem', xl:'0rem' },
+        marginBottom:{ xs: '1rem', sm: '0.5rem', md: '0.5rem',lg:'0rem', xl:'0rem' }
 
       }}>
-      <Typography sx={{ fontSize: '30px' }} color="text.secondary">
+      <Typography sx={{ fontSize: '30px' }} color="white">
         {props.titulo}
       </Typography>
 
 
-      <Typography sx={{ fontSize: '30px', color: '#2c5364', }}>
+      <Typography sx={{ fontSize: '30px', color: '#17b978', }}>
         <FaChevronDown /><strong>{props.coleccion}</strong>
       </Typography>
 
