@@ -21,6 +21,7 @@ export default function Layout() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            color: '#ffff'
           }}
           role="alert"
         >

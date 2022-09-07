@@ -8,7 +8,7 @@ import Container from "@mui/material/Container";
 import { TYPES } from "../actions/cartActions";
 import { cartReducer, cartInitialState } from "../reducer/cartReducer";
 import { useReducer } from "react";
-
+import Box from "@mui/material/Box"
 const ListProductos = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
 
@@ -91,13 +91,14 @@ const ListProductos = () => {
 
   return (
     <>
-      <Container
-        id='productos'
+      <Box
+        id="productos"
         sx={{
-          backgroundColor: "#ffff",
+          maxWidth: "1353px",
+          backgroundColor: "black",
           display: "flex",
-          minHeight: "420px",
           alignItems: "center",
+          
         }}
       >
         <Container
@@ -167,7 +168,7 @@ const ListProductos = () => {
           </Swiper>
         </Container>
         <div className="pagination" />
-      </Container>
+      </Box>
     </>
   );
 };

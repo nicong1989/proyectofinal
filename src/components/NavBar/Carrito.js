@@ -1,6 +1,6 @@
 import { TYPES } from "../actions/cartActions";
 import { cartReducer, cartInitialState } from "../reducer/cartReducer";
-import CartItem from "../CartItem";
+import CartItem from "./Carrito/CartItem";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Box } from "@mui/system";
