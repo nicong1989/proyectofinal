@@ -5,7 +5,6 @@ export const Box = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   background: rgb(32, 58, 67);
-  width: 100vw;
   justify-content: center;
   padding-bottom:20px;
 `;
