@@ -26,17 +26,15 @@ const Carrito = () => {
   }, []);
 
   const deleteFromCart = (data, all = false) => {
-    // console.log(id, all)
-    // Explicar esto antes que la programación del reducer
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-    let endpoint = `http://localhost:3002/cart/`;
+    let endpoint = `http://localhost:3002/cart/${data.id}`;
 
     if (all || data.quantity === 1) {
       console.log("salta aca");
       axios.delete(endpoint).then(console.log("ok"));
-      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.id });
     } else {
       let options = {
         method: "PUT",
@@ -44,39 +42,37 @@ const Carrito = () => {
         data: { ...data, quantity: itemInCart.quantity - 1 },
       };
       axios(options);
-      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.id });
     }
   };
 
   const addToCart = (data) => {
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-
+      console.log(itemInCart)
     if (itemInCart) {
-      let endpoint = `http://localhost:3002/cart`;
-
+      let endpoint = `http://localhost:3002/cart/${data.id}`;
       let options = {
         method: "PUT",
         url: endpoint,
-        data: { quantity: itemInCart.quantity + 1 },
+        data: { ...data, quantity: itemInCart.quantity + 1 },
       };
       axios(options);
     } else {
       axios({
         method: "POST",
-        url: "http://localhost:3002/cart",
+        url: `http://localhost:3002/cart`,
         data: { ...data, quantity: 1 },
       }).then(console.log(data));
     }
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
-
-    //  dispatch({type: TYPES.ADD_TO_CART_NAV, payload: id});
   };
 
-  const clearCart = () => {
-    axios.delete("http://localhost:3002/cart").then(console.log("ok"));
+  const clearCart = (data) => {
+   
+      axios.delete(`http://localhost:3002/cart`);
     dispatch({ type: TYPES.CLEAR_CART });
   };
   let count = 0;
@@ -143,7 +139,7 @@ const Carrito = () => {
       ))}
 
       <Box>
-        <span onClick={() => clearCart()}>Vaciar Carrito</span>
+        <span onClick={() => clearCart(cart)}>Vaciar Carrito</span>
       </Box>
 
       <Box

@@ -7,11 +7,11 @@ import "swiper/css";
 import Container from "@mui/material/Container";
 import { TYPES } from "../actions/cartActions";
 import { cartReducer, cartInitialState } from "../reducer/cartReducer";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import Box from "@mui/material/Box"
 const ListProductos = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
-
+  const [isLoading, setLoading] = useState(true);
   const { products, cart } = state;
 
   const updateState = async () => {
@@ -21,7 +21,7 @@ const ListProductos = () => {
     const resCart = await axios.get(cartURL);
     const newProduct = await resProducts.data;
     const newCartItem = await resCart.data;
-
+    setLoading(false);
     dispatch({
       type: TYPES.READ_STATE,
       payload: [newProduct, newCartItem],
@@ -34,13 +34,13 @@ const ListProductos = () => {
     // console.log(id, all)
     // Explicar esto antes que la programación del reducer
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-    let endpoint = ` http://localhost:3002/cart/${data.codeProduct}`;
+    let endpoint = ` http://localhost:3002/cart/${data.id}`;
 
     if (all || data.quantity === 1) {
       axios.delete(endpoint).then(console.log("ok"));
-      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.id });
     } else {
       let options = {
         method: "PUT",
@@ -48,53 +48,56 @@ const ListProductos = () => {
         data: { ...data, quantity: itemInCart.quantity - 1 },
       };
       axios(options);
-      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.id });
     }
   };
 
   const addToCart = (data) => {
-    //console.log(state.cart);
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-
+      console.log(itemInCart)
     if (itemInCart) {
-      let endpoint = `http://localhost:3002/cart/${data.codeProduct}`;
-
+      let endpoint = `http://localhost:3002/cart/${data.id}`;
       let options = {
         method: "PUT",
         url: endpoint,
-        data: { quantity: itemInCart.quantity + 1 },
+        data: { ...data, quantity: itemInCart.quantity + 1 },
       };
       axios(options);
     } else {
       axios({
         method: "POST",
-        url: "http://localhost:3002/cart",
+        url: `http://localhost:3002/cart`,
         data: { ...data, quantity: 1 },
-      });
+      }).then(console.log(data));
     }
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
-
-    //  dispatch({type: TYPES.ADD_TO_CART_NAV, payload: id});
+    
   };
 
   let count = 0;
 
-  // eslint-disable-next-line array-callback-return
+
   state.cart.map((item) => {
     count = count + item.quantity;
     document.getElementById("cartIng").innerHTML = count;
-    // document.getElementById("cartIng2").innerHTML = count;
   });
+
+  if(isLoading){
+    return (
+      <>
+        <h1>Cargando...</h1>
+      </>
+    )
+  }
 
   return (
     <>
       <Box
         id="productos"
         sx={{
-          maxWidth: "1353px",
           backgroundColor: "black",
           display: "flex",
           alignItems: "center",
@@ -150,16 +153,17 @@ const ListProductos = () => {
               },
             }}
           >
-            {products.map((product) => (
-              <SwiperSlide>
+            {products.map((product, index) => (
+              <SwiperSlide
+              >
                 <Producto
-                  key={product["id"]}
+                  key={index}
                   data={product}
                   addToCart={addToCart}
                   deleteFromCart={deleteFromCart}
                   cart={
                     cart.find(
-                      (element) => element.codeProduct === product.codeProduct
+                      (element) => element.id === product.id
                     ) || 0
                   }
                 />
@@ -174,32 +178,3 @@ const ListProductos = () => {
 };
 
 export default ListProductos;
-
-// {
-//   products.map((product) => (
-//     <Product
-//       key={product["_id"]}
-//       data={product}
-//       addToCart={addToCart}
-//       deleteFromCart={deleteFromCart}
-//       cart={
-//         cart.find((element) => element.codeProduct === product.codeProduct) || 0
-//       }
-//     />
-//   ));
-// }
-
-// const URL = "http://localhost:3002/productos";
-
-// const getData = async () => {
-//   const response = axios.get(URL);
-//   return response;
-// };
-
-// const [list, setList] = useState([]);
-
-// useEffect(() => {
-//   getData().then((response) => {
-//     setList(response.data);
-//   });
-// }, []);

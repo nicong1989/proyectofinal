@@ -35,6 +35,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
       onMouseEnter={(e) => showButton(e)}
       onMouseLeave={(e) => hideButton(e)}
       sx={{
+        padding: "auto",
         maxWidth: 345,
         color: "#ffff",
         maxHeight: 600,
@@ -78,7 +79,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
         </Typography>
         <Typography variant="body2" color="rgba(247, 98, 5, 1)">
           {[...Array(rating)].map((index) => (
-            <FaStar id={index + 1} key={index} />
+            <FaStar id={index} key={index} />
           ))}
         </Typography>
       </CardContent>
@@ -91,7 +92,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
           justifyContent: "space-between",
         }}
       >
-        <button onClick={() => addToCart(data)} className={display} id>
+        <button onClick={() => addToCart(data)} className={display} >
           <strong>COMPRAR</strong>
         </button>
 
@@ -178,7 +179,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
               >
                 <strong>Precio:</strong> {price}
               </Typography>
-           
+
             </CardContent>
           </Modal.Body>
 

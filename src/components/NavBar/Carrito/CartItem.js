@@ -10,7 +10,7 @@ const CartItem = ({ data, deleteFromCart, addToCart }) => {
     <Container>
       <Box
         sx={{
-          width: 1,
+          width: "100%",
           height: 50,
           display: "flex",
           justifyContent: "space-between",
@@ -40,12 +40,10 @@ const CartItem = ({ data, deleteFromCart, addToCart }) => {
           onClick={() => addToCart(data)}
          
         >
-         
+         +
         </button>
 
-        <span>
-          ${price}
-        </span>
+       
         <span>
           {" "}
           ${price * quantity}
