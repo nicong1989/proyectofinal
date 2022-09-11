@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Carrito from './Carrito';
+import Carrito from './Carrito/Carrito';
 
 const Overlay = styled.div`
     width: 100vw;

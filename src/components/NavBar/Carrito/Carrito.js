@@ -1,10 +1,19 @@
-import { TYPES } from "../actions/cartActions";
-import { cartReducer, cartInitialState } from "../reducer/cartReducer";
-import CartItem from "./Carrito/CartItem";
+import { TYPES } from "../../actions/cartActions";
+import { cartReducer, cartInitialState } from "../../reducer/cartReducer";
+import CartItem from "./CartItem";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Box } from "@mui/system";
 import { Container } from "@mui/material";
+import { 
+  ContainerStyled,
+  NumProducts,
+  EspacioBlanco,
+  Detalles,
+  DivSubtitulo,
+  Cantidad,
+  PrecioXUnid,
+  Total } from "./CarritoStyles"
 
 const Carrito = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
@@ -104,30 +113,18 @@ const Carrito = () => {
       </svg>
     </div>
   ) : (
-    <Container>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <h2>{state.cart.length} Items</h2>
-      </Box>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <h3>Detalle</h3>
-        <h3>Cantidad</h3>
-        <h3>Precio</h3>
-        <h3>Total</h3>
-      </Box>
+    <ContainerStyled>
+      <NumProducts
+       >
+        Productos: {state.cart.length} 
+      </NumProducts>
+      <DivSubtitulo>
+      <EspacioBlanco/>
+      <Detalles>Detalle</Detalles>
+      <Cantidad>Cantidad</Cantidad>
+      <PrecioXUnid>Precio</PrecioXUnid>
+      <Total>Total</Total>
+      </DivSubtitulo>
 
       {cart.map((item, index) => (
         <CartItem
@@ -157,7 +154,7 @@ const Carrito = () => {
           Finalizar Compra
         </button>
       </Box>
-    </Container>
+    </ContainerStyled>
   );
 };
 export default Carrito;

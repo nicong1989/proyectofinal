@@ -1,6 +1,9 @@
 
 import { Box } from "@mui/system";
-import { Container } from "@mui/material";
+import {
+  Container,
+  ButtonX
+} from "./CartItemStyle"
 
 const CartItem = ({ data, deleteFromCart, addToCart }) => {
   let { img, name, price, quantity } = data;
@@ -8,16 +11,8 @@ const CartItem = ({ data, deleteFromCart, addToCart }) => {
 
   return (
     <Container>
-      <Box
-        sx={{
-          width: "100%",
-          height: 50,
-          display: "flex",
-          justifyContent: "space-between",
-          fontSize: "10px"
-        }}
-      >
-        <button onClick={() => deleteFromCart(data, true)}>X</button>
+      
+        <ButtonX onClick={() => deleteFromCart(data, true)}>X</ButtonX>
 
         <img src={img} alt="" />
 
@@ -48,7 +43,7 @@ const CartItem = ({ data, deleteFromCart, addToCart }) => {
           {" "}
           ${price * quantity}
         </span>
-      </Box>
+      
     </Container>
   );
 };
