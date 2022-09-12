@@ -11,7 +11,7 @@ import { useReducer } from "react";
 import Box from "@mui/material/Box";
 const ListProductos = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
-
+  const [isLoading, setLoading] = useState(true);
   const { products, cart } = state;
 
   const updateState = async () => {
@@ -21,7 +21,7 @@ const ListProductos = () => {
     const resCart = await axios.get(cartURL);
     const newProduct = await resProducts.data;
     const newCartItem = await resCart.data;
-
+    setLoading(false);
     dispatch({
       type: TYPES.READ_STATE,
       payload: [newProduct, newCartItem],
@@ -33,13 +33,13 @@ const ListProductos = () => {
   const deleteFromCart = (data, all = false) => {
     
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-    let endpoint = ` http://localhost:3002/cart/${data.codeProduct}`;
+    let endpoint = ` http://localhost:3002/cart/${data.id}`;
 
     if (all || data.quantity === 1) {
       axios.delete(endpoint).then(console.log("ok"));
-      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.id });
     } else {
       let options = {
         method: "PUT",
@@ -47,31 +47,30 @@ const ListProductos = () => {
         data: { ...data, quantity: itemInCart.quantity - 1 },
       };
       axios(options);
-      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.id });
     }
   };
 
   const addToCart = (data) => {
     
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-
+      console.log(itemInCart)
     if (itemInCart) {
-      let endpoint = `http://localhost:3002/cart/${data.codeProduct}`;
-
+      let endpoint = `http://localhost:3002/cart/${data.id}`;
       let options = {
         method: "PUT",
         url: endpoint,
-        data: { quantity: itemInCart.quantity + 1 },
+        data: { ...data, quantity: itemInCart.quantity + 1 },
       };
       axios(options);
     } else {
       axios({
         method: "POST",
-        url: "http://localhost:3002/cart",
+        url: `http://localhost:3002/cart`,
         data: { ...data, quantity: 1 },
-      });
+      }).then(console.log(data));
     }
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
@@ -86,6 +85,14 @@ const ListProductos = () => {
     document.getElementById("cartIng").innerHTML = count;
    
   });
+
+  if(isLoading){
+    return (
+      <>
+        <h1>Cargando...</h1>
+      </>
+    )
+  }
 
   return (
     <>
@@ -148,16 +155,17 @@ const ListProductos = () => {
               },
             }}
           >
-            {products.map((product) => (
-              <SwiperSlide>
+            {products.map((product, index) => (
+              <SwiperSlide
+              >
                 <Producto
-                  key={product["id"]}
+                  key={index}
                   data={product}
                   addToCart={addToCart}
                   deleteFromCart={deleteFromCart}
                   cart={
                     cart.find(
-                      (element) => element.codeProduct === product.codeProduct
+                      (element) => element.id === product.id
                     ) || 0
                   }
                 />

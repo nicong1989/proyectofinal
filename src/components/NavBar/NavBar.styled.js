@@ -4,9 +4,10 @@ export const StyledNavBar = styled.div`
   //caja contenedora
   display: flex;
   background-color: black;
+  justify-content: space-evenly;
 
   @media (max-width: 900px) {
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 `;
 // export const NavItems = styled.div`            //era el estilo de los links que luego los pase al comp Links.js

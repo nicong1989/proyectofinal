@@ -23,7 +23,7 @@ const Reproductor = styled.div `
                 controls
                 playing
                 muted
-                volume='0.8'
+                
                 
                 loop
                 playbackRate={1.75}
