@@ -87,7 +87,7 @@ const ListProductos = () => {
           >
             {list?.map((slayed, index) => (
               <SwiperSlide key={index}>
-                <Producto slayed={slayed} />
+                <Producto slayed={slayed}/>
               </SwiperSlide>
             ))}
           </Swiper>

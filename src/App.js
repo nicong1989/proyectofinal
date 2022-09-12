@@ -1,19 +1,35 @@
-import React from "react";
+import React from 'react';
+import NavBar from './components/NavBar/NavBar';
+import Header from './components/Header/Header';
+import Gallery from './components/Carousel/Carousel';
 import Sucripcion from "./components/Sucripcion/Sucripcion";
 import Productos from "./components/Cards/Productos";
 import Titulo from "./components/Titulo/Titulo";
 import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
+//<<<<<<< HEAD
 import Galeria from './components/section_Gabriel/Galeria'
 import Titulo1 from './components/section_Gabriel/Titulo1';
+//=======
+import Galeria from './components/Galeria.js'
+import Titulo1 from './components/Titulo1.js';
+import './components/Carousel/carousel.css'
+
+//>>>>>>> main
 
 
 
 const App = () => {
-
   return (
     <>
+
+      <Header />
+      <NavBar />
+      <Gallery />
+
+
       <Titulo1/>
       <Galeria/>
+
       <Titulo
         titulo="COLECCIÓN"
         coleccion="ANIMAL FARM"
