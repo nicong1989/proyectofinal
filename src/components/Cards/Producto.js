@@ -42,7 +42,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
         transition: "0.4s",
         "&:hover": {
           transform: "translateY(-0.5rem)",
-          boxShadow: "0.5rem 0.75rem 1.5rem #17b978",
+          
         },
       }}
     >
@@ -60,7 +60,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
           margin: "auto",
         }}
       >
-        <FaStar />
+        <FaStar sx={{}}/>
       </CardContent>
 
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>

@@ -19,11 +19,9 @@ const App = () => {
   return (
     <>
       <Aviso />
-
       <Header />
       <NavBar />
       <Gallery />
-
       <Titulo1 />
       <Galeria />
       <Titulo titulo="COLECCIÓN" coleccion="ANIMAL FARM" />

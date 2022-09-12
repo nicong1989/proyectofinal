@@ -8,7 +8,7 @@ import Container from "@mui/material/Container";
 import { TYPES } from "../actions/cartActions";
 import { cartReducer, cartInitialState } from "../reducer/cartReducer";
 import { useReducer } from "react";
-import Box from "@mui/material/Box"
+import Box from "@mui/material/Box";
 const ListProductos = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
 
@@ -31,8 +31,7 @@ const ListProductos = () => {
     updateState();
   }, []);
   const deleteFromCart = (data, all = false) => {
-    // console.log(id, all)
-    // Explicar esto antes que la programación del reducer
+    
     let itemInCart = state.cart.find(
       (item) => item.codeProduct === data.codeProduct
     );
@@ -53,7 +52,7 @@ const ListProductos = () => {
   };
 
   const addToCart = (data) => {
-    //console.log(state.cart);
+    
     let itemInCart = state.cart.find(
       (item) => item.codeProduct === data.codeProduct
     );
@@ -77,16 +76,15 @@ const ListProductos = () => {
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
 
-    //  dispatch({type: TYPES.ADD_TO_CART_NAV, payload: id});
   };
 
   let count = 0;
 
-  // eslint-disable-next-line array-callback-return
+ 
   state.cart.map((item) => {
     count = count + item.quantity;
     document.getElementById("cartIng").innerHTML = count;
-    // document.getElementById("cartIng2").innerHTML = count;
+   
   });
 
   return (
@@ -95,10 +93,10 @@ const ListProductos = () => {
         id="productos"
         sx={{
           maxWidth: "1353px",
+          height: "35rem",
           backgroundColor: "black",
           display: "flex",
           alignItems: "center",
-          
         }}
       >
         <Container
@@ -174,32 +172,3 @@ const ListProductos = () => {
 };
 
 export default ListProductos;
-
-// {
-//   products.map((product) => (
-//     <Product
-//       key={product["_id"]}
-//       data={product}
-//       addToCart={addToCart}
-//       deleteFromCart={deleteFromCart}
-//       cart={
-//         cart.find((element) => element.codeProduct === product.codeProduct) || 0
-//       }
-//     />
-//   ));
-// }
-
-// const URL = "http://localhost:3002/productos";
-
-// const getData = async () => {
-//   const response = axios.get(URL);
-//   return response;
-// };
-
-// const [list, setList] = useState([]);
-
-// useEffect(() => {
-//   getData().then((response) => {
-//     setList(response.data);
-//   });
-// }, []);
