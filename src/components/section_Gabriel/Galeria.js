@@ -1,38 +1,38 @@
-import { style } from "@mui/system";
 import React from "react";
-import styled from "styled-components";
 import { ComponenteDiv } from "./ComponenteDiv";
 import ReproductorVideo from "./RepVideo.js"
+import styled from "styled-components";
 
-const Section = styled.section`
-      background-image: url(https://www.esquire.com/es/moda-hombre/a19683184/gorras-animales-marca-goorin-brothers/); 
-	    background-size: cover;/*que la imagen cubra todo */      
-        
-        display: flex; 
-        flex-direction: row;
+const Galeria= styled.section`
+        display: flex;
+        flex-direction : row;
         justify-content: space-between;
 
         box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.5);
         width: 100 vh;
         height: 600px;
         text-align: center;
-       // background-color: #EFF5FB;
+        background-image: linear-gradient(rgb(13, 17, 28), rgb(211, 26, 20));
+        
         color: red;
         margin: 10px;
-       
+
+        @media(max-width: 767px){
+            flex-direction: column;
+            
+        }
+           
 `
-
-const Galeria = () => {
+export const  Gallery = () => {
   return (
-    <Section>
-       <ComponenteDiv/>
+    <Galeria>
+          <ComponenteDiv/>
 
-       <ReproductorVideo/>
+          <ReproductorVideo/>
 
-       <ComponenteDiv/>
-    
-    </Section>
+          <ComponenteDiv/>
+    </Galeria>
   );
 };
 
-export default Galeria;
+export default Gallery;
