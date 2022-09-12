@@ -7,36 +7,20 @@ import Gallery from "./components/Carousel/Carousel";
 import "./App.css";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
-
-
 import "./components/Carousel/carousel.css";
 import Titulo from "./components/Titulo/Titulo";
-<<<<<<< HEAD
 import Productos from "./components/Cards/Productos";
-=======
-import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
-//<<<<<<< HEAD
-import Gallery from './components/section_Gabriel/Galeria'
-import Titulo1 from './components/section_Gabriel/Titulo';
-//=======
-
-import './components/Carousel/carousel.css'
-
-//>>>>>>> main
-
->>>>>>> Gabriel
-
+import Titulo1 from "./components/section_Gabriel/Titulo";
 import "./components/Carousel/carousel.css";
+import Galeria from "./components/section_Gabriel/Galeria"
 
 const App = () => {
   return (
     <>
       <Aviso />
-
       <Header />
       <NavBar />
       <Gallery />
-
       <Titulo1 />
       <Galeria />
       <Titulo titulo="COLECCIÓN" coleccion="ANIMAL FARM" />
@@ -47,7 +31,6 @@ const App = () => {
         titulo="MANTENETE AL TANTO DE NUESTROS DESCUENTOS"
         texto="Suscribite a nuestro newsletter y enteráte de todos los beneficios"
       />
-
       <ContactUs />
       <Footer />
     </>
