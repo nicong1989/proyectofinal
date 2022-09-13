@@ -19,6 +19,9 @@ const ComponentDiv= styled.div `
       flex-direction: column;
       align-items:center;
       overflow-y: hidden;
+      @media(max-width: 767px){
+           width: 100%;
+      }
 
 `
 

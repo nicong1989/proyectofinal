@@ -19,14 +19,15 @@ const Galeria= styled.section`
 
         @media(max-width: 767px){
             flex-direction: column;
-            
+           
+            }
         }
            
 `
 export const  Gallery = () => {
   return (
     <Galeria>
-          <ComponenteDiv/>
+          <ComponenteDiv className="visible"/>
 
           <ReproductorVideo/>
 

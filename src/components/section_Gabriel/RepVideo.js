@@ -9,7 +9,11 @@ const Reproductor = styled.div `
           background-color: #E5E5E5;
           color: red;
           margin: 8px;
-          border-radius: 10px  ;  
+          border-radius: 10px  ; 
+          
+          @media(max-width: 767px){
+           width: 100%;
+          }
 `
 
 
