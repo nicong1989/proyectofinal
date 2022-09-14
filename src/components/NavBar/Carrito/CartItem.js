@@ -2,7 +2,14 @@
 import { Box } from "@mui/system";
 import {
   Container,
-  ButtonX
+  ButtonX,
+  Detalles,
+  Cantidad,
+  PrecioXUnid,
+  Image,
+  Input,
+  Parra,
+  Total
 } from "./CartItemStyle"
 
 const CartItem = ({ data, deleteFromCart, addToCart }) => {
@@ -13,37 +20,28 @@ const CartItem = ({ data, deleteFromCart, addToCart }) => {
     <Container>
       
         <ButtonX onClick={() => deleteFromCart(data, true)}>X</ButtonX>
+        <Detalles>
+        <Image src={img} alt="" />
 
-        <img src={img} alt="" />
-
-        <span>{name}</span>
-
-        <button
-          onClick={() => deleteFromCart(data)}
-          
-        >
-          
-        </button>
-
-        <input
-          className="mx-2 border text-center w-8"
+        <Parra>{name}</Parra>
+        </Detalles>
+        
+        <ButtonX onClick={() => deleteFromCart(data)}>
+        -
+        </ButtonX>
+        <Cantidad>
+        <Input
           type="text"
           value={quantity}
         />
-
-        <button
-          onClick={() => addToCart(data)}
-         
-        >
+        </Cantidad>
+        <ButtonX onClick={() => addToCart(data)}>
          +
-        </button>
-
+        </ButtonX>
        
-        <span>
-          {" "}
+       <PrecioXUnid>
           ${price * quantity}
-        </span>
-      
+        </PrecioXUnid>
     </Container>
   );
 };

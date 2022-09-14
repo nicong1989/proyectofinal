@@ -13,7 +13,12 @@ import {
   DivSubtitulo,
   Cantidad,
   PrecioXUnid,
-  Total } from "./CarritoStyles"
+  Total,
+  DivTotal,
+  PrecioTotal,
+  DivBotones,
+  Button
+   } from "./CarritoStyles"
 
 const Carrito = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
@@ -79,9 +84,12 @@ const Carrito = () => {
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
   };
 
-  const clearCart = (data) => {
-   
-      axios.delete(`http://localhost:3002/cart`);
+  const clearCart = () => {
+    try {
+      axios.delete(`http://localhost:3002/cart`)
+    } catch (error) {
+      console.log(error)
+    }
     dispatch({ type: TYPES.CLEAR_CART });
   };
   let count = 0;
@@ -123,7 +131,6 @@ const Carrito = () => {
       <Detalles>Detalle</Detalles>
       <Cantidad>Cantidad</Cantidad>
       <PrecioXUnid>Precio</PrecioXUnid>
-      <Total>Total</Total>
       </DivSubtitulo>
 
       {cart.map((item, index) => (
@@ -134,26 +141,19 @@ const Carrito = () => {
           addToCart={addToCart}
         />
       ))}
-
-      <Box>
-        <span onClick={() => clearCart(cart)}>Vaciar Carrito</span>
-      </Box>
-
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
-      >
-        <span>Total: ${sumTotal} </span>
-
-        <button>
-          {" "}
-          Finalizar Compra
-        </button>
-      </Box>
+      <DivTotal>
+      <Total>
+        Total:  
+      </Total>
+      <PrecioTotal>
+      ${sumTotal}
+      </PrecioTotal>
+      </DivTotal>
+      <DivBotones>
+        <Button onClick={() => clearCart()}>Vaciar Carrito</Button>
+        <Button>Finalizar Compra</Button>
+      </DivBotones>
+      
     </ContainerStyled>
   );
 };
