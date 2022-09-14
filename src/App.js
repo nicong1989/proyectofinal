@@ -11,20 +11,14 @@ import Footer from "./components/Footer/Footer";
 
 import "./components/Carousel/carousel.css";
 import Titulo from "./components/Titulo/Titulo";
-<<<<<<< HEAD
+
 import Productos from "./components/Cards/Productos";
-=======
-import ProductosSlayed from "./components/slayedCards/ProductosSlayed";
-//<<<<<<< HEAD
-import Gallery from './components/section_Gabriel/Galeria'
-import Titulo1 from './components/section_Gabriel/Titulo';
-//=======
+
+import Galeria from './components/section_Gabriel/Galeria'
+import Titulo1 from './components/section_Gabriel//Titulo1.js';
+
 
 import './components/Carousel/carousel.css'
-
-//>>>>>>> main
-
->>>>>>> Gabriel
 
 import "./components/Carousel/carousel.css";
 
