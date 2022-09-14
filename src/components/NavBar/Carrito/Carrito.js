@@ -1,10 +1,24 @@
-import { TYPES } from "../actions/cartActions";
-import { cartReducer, cartInitialState } from "../reducer/cartReducer";
-import CartItem from "./Carrito/CartItem";
+import { TYPES } from "../../actions/cartActions";
+import { cartReducer, cartInitialState } from "../../reducer/cartReducer";
+import CartItem from "./CartItem";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Box } from "@mui/system";
 import { Container } from "@mui/material";
+import { 
+  ContainerStyled,
+  NumProducts,
+  EspacioBlanco,
+  Detalles,
+  DivSubtitulo,
+  Cantidad,
+  PrecioXUnid,
+  Total,
+  DivTotal,
+  PrecioTotal,
+  DivBotones,
+  Button
+   } from "./CarritoStyles"
 
 const Carrito = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
@@ -26,17 +40,15 @@ const Carrito = () => {
   }, []);
 
   const deleteFromCart = (data, all = false) => {
-    // console.log(id, all)
-    // Explicar esto antes que la programación del reducer
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-    let endpoint = `http://localhost:3002/cart/`;
+    let endpoint = `http://localhost:3002/cart/${data.id}`;
 
     if (all || data.quantity === 1) {
       console.log("salta aca");
       axios.delete(endpoint).then(console.log("ok"));
-      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ALL_PRODUCTS, payload: data.id });
     } else {
       let options = {
         method: "PUT",
@@ -44,39 +56,40 @@ const Carrito = () => {
         data: { ...data, quantity: itemInCart.quantity - 1 },
       };
       axios(options);
-      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.codeProduct });
+      dispatch({ type: TYPES.REMOVE_ONE_PRODUCT, payload: data.id });
     }
   };
 
   const addToCart = (data) => {
     let itemInCart = state.cart.find(
-      (item) => item.codeProduct === data.codeProduct
+      (item) => item.id === data.id
     );
-
+      console.log(itemInCart)
     if (itemInCart) {
-      let endpoint = `http://localhost:3002/cart`;
-
+      let endpoint = `http://localhost:3002/cart/${data.id}`;
       let options = {
         method: "PUT",
         url: endpoint,
-        data: { quantity: itemInCart.quantity + 1 },
+        data: { ...data, quantity: itemInCart.quantity + 1 },
       };
       axios(options);
     } else {
       axios({
         method: "POST",
-        url: "http://localhost:3002/cart",
+        url: `http://localhost:3002/cart`,
         data: { ...data, quantity: 1 },
       }).then(console.log(data));
     }
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
-
-    //  dispatch({type: TYPES.ADD_TO_CART_NAV, payload: id});
   };
 
   const clearCart = () => {
-    axios.delete("http://localhost:3002/cart").then(console.log("ok"));
+    try {
+      axios.delete(`http://localhost:3002/cart`)
+    } catch (error) {
+      console.log(error)
+    }
     dispatch({ type: TYPES.CLEAR_CART });
   };
   let count = 0;
@@ -108,30 +121,17 @@ const Carrito = () => {
       </svg>
     </div>
   ) : (
-    <Container>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <h2>{state.cart.length} Items</h2>
-      </Box>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <h3>Detalle</h3>
-        <h3>Cantidad</h3>
-        <h3>Precio</h3>
-        <h3>Total</h3>
-      </Box>
+    <ContainerStyled>
+      <NumProducts
+       >
+        Productos: {state.cart.length} 
+      </NumProducts>
+      <DivSubtitulo>
+      <EspacioBlanco/>
+      <Detalles>Detalle</Detalles>
+      <Cantidad>Cantidad</Cantidad>
+      <PrecioXUnid>Precio</PrecioXUnid>
+      </DivSubtitulo>
 
       {cart.map((item, index) => (
         <CartItem
@@ -141,27 +141,20 @@ const Carrito = () => {
           addToCart={addToCart}
         />
       ))}
-
-      <Box>
-        <span onClick={() => clearCart()}>Vaciar Carrito</span>
-      </Box>
-
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
-      >
-        <span>Total: ${sumTotal} </span>
-
-        <button>
-          {" "}
-          Finalizar Compra
-        </button>
-      </Box>
-    </Container>
+      <DivTotal>
+      <Total>
+        Total:  
+      </Total>
+      <PrecioTotal>
+      ${sumTotal}
+      </PrecioTotal>
+      </DivTotal>
+      <DivBotones>
+        <Button onClick={() => clearCart()}>Vaciar Carrito</Button>
+        <Button>Finalizar Compra</Button>
+      </DivBotones>
+      
+    </ContainerStyled>
   );
 };
 export default Carrito;
