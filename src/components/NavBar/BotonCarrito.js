@@ -27,7 +27,7 @@ const StyledCartButton = styled.button`
   border-radius: 14px;
   color: #000;
   font-size: 20px;
-  padding: 9px 20px 10px 25px;
+  padding: 9px 30px 10px 15px;
   text-decoration: none;
   border: none;
   position: fixed;
