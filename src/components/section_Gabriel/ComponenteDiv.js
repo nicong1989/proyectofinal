@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 //import CarsImagen from "./CardsImagen.js";
-import gorras from "../assets/image/image.js"
-import "../style/style.css"
+import gorras from "./assets/image/image.js"
+
 import { motion } from 'framer-motion'
 
 
