@@ -11,8 +11,11 @@ import "./components/Carousel/carousel.css";
 import Titulo from "./components/Titulo/Titulo";
 import Productos from "./components/Cards/Productos";
 import Titulo1 from "./components/section_Gabriel/Titulo1";
-import "./components/Carousel/carousel.css";
-import Galeria from "./components/section_Gabriel/Galeria"
+import Productos from "./components/Cards/Productos";
+import Galeria from './components/section_Gabriel/Galeria'
+
+
+
 
 const App = () => {
   return (

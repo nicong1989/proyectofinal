@@ -7,7 +7,6 @@ const Galeria= styled.section`
         display: flex;
         flex-direction : row;
         justify-content: space-between;
-
         box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.5);
         width: 100 vh;
         height: 600px;
@@ -16,17 +15,15 @@ const Galeria= styled.section`
         
         color: red;
         margin: 10px;
-
         @media(max-width: 767px){
             flex-direction: column;
-            
-        }
            
-`
+            }
+        `
 export const  Gallery = () => {
   return (
     <Galeria>
-          <ComponenteDiv/>
+          <ComponenteDiv className="visible"/>
 
           <ReproductorVideo/>
 

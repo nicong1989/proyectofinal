@@ -1,10 +1,24 @@
-import { TYPES } from "../actions/cartActions";
-import { cartReducer, cartInitialState } from "../reducer/cartReducer";
-import CartItem from "./Carrito/CartItem";
+import { TYPES } from "../../actions/cartActions";
+import { cartReducer, cartInitialState } from "../../reducer/cartReducer";
+import CartItem from "./CartItem";
 import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { Box } from "@mui/system";
 import { Container } from "@mui/material";
+import { 
+  ContainerStyled,
+  NumProducts,
+  EspacioBlanco,
+  Detalles,
+  DivSubtitulo,
+  Cantidad,
+  PrecioXUnid,
+  Total,
+  DivTotal,
+  PrecioTotal,
+  DivBotones,
+  Button
+   } from "./CarritoStyles"
 
 const Carrito = () => {
   const [state, dispatch] = useReducer(cartReducer, cartInitialState);
@@ -70,9 +84,12 @@ const Carrito = () => {
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });
   };
 
-  const clearCart = (data) => {
-   
-      axios.delete(`http://localhost:3002/cart`);
+  const clearCart = () => {
+    try {
+      axios.delete(`http://localhost:3002/cart`)
+    } catch (error) {
+      console.log(error)
+    }
     dispatch({ type: TYPES.CLEAR_CART });
   };
   let count = 0;
@@ -104,30 +121,17 @@ const Carrito = () => {
       </svg>
     </div>
   ) : (
-    <Container>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <h2>{state.cart.length} Items</h2>
-      </Box>
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <h3>Detalle</h3>
-        <h3>Cantidad</h3>
-        <h3>Precio</h3>
-        <h3>Total</h3>
-      </Box>
+    <ContainerStyled>
+      <NumProducts
+       >
+        Productos: {state.cart.length} 
+      </NumProducts>
+      <DivSubtitulo>
+      <EspacioBlanco/>
+      <Detalles>Detalle</Detalles>
+      <Cantidad>Cantidad</Cantidad>
+      <PrecioXUnid>Precio</PrecioXUnid>
+      </DivSubtitulo>
 
       {cart.map((item, index) => (
         <CartItem
@@ -137,27 +141,20 @@ const Carrito = () => {
           addToCart={addToCart}
         />
       ))}
-
-      <Box>
-        <span onClick={() => clearCart(cart)}>Vaciar Carrito</span>
-      </Box>
-
-      <Box
-        sx={{
-          width: 1,
-          height: 100,
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
-      >
-        <span>Total: ${sumTotal} </span>
-
-        <button>
-          {" "}
-          Finalizar Compra
-        </button>
-      </Box>
-    </Container>
+      <DivTotal>
+      <Total>
+        Total:  
+      </Total>
+      <PrecioTotal>
+      ${sumTotal}
+      </PrecioTotal>
+      </DivTotal>
+      <DivBotones>
+        <Button onClick={() => clearCart()}>Vaciar Carrito</Button>
+        <Button>Finalizar Compra</Button>
+      </DivBotones>
+      
+    </ContainerStyled>
   );
 };
 export default Carrito;
