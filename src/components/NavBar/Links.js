@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 export const listaLinks = [
   ["NUESTROS PRODUCTOS", "#productos"],
-  ["MENU 2", "#"],
-  ["MENU 3", "#"],
+  ["COLECCIONES", "#coleccion"],
   ["CONTACTO", "#contacto"],
 ];
 
