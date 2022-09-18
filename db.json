@@ -193,6 +193,20 @@
       "model": "OUTCASE"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "9",
+      "codeProduct": 10,
+      "name": "DO IT",
+      "marca": "GOORAS GOORIN",
+      "price": 100,
+      "img": "https://i.imgur.com/VqkHHew.png",
+      "rating": 4,
+      "timeLeft": 20,
+      "totalSales": 1558,
+      "model": "OUTCASE",
+      "quantity": 1
+    }
+  ],
   "favorite": []
 }
