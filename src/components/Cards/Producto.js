@@ -102,7 +102,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
             color: "#ffff",
             textShadow: "4px 4px 6px #ffff",
             "&:hover": {
-              color: "#17b978",
+              color: "#a98f3b",
             },
           }}
         >
@@ -188,7 +188,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
               Cerrar
             </Button>
             <Button
-              style={{ backgroundColor: "#17b978" }}
+              style={{ backgroundColor: "#a98f3b" }}
               onClick={() => addToCart(data)}
             >
               Añadir al Carrito

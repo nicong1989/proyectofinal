@@ -5,7 +5,7 @@ const Message = ({ msg, bgColor }) => {
     padding: "1rem",
     marginBottom: "1rem",
     textAlign: "center",
-    color: "#fff",
+    color: "##a98f3b",
     fontWeight: "bold",
     backgroundColor: bgColor,
   };

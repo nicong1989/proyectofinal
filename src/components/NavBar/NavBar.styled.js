@@ -41,7 +41,7 @@ export const StyledLogo = styled.img`
   //logo
 
   object-fit: contain;
-  height: 92%;
-  margin-top: 5px;
+  height: 80%;
+  margin-top: 10px;
 
 `;

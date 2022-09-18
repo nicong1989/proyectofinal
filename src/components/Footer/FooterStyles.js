@@ -4,7 +4,7 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background:  rgb(15, 32, 39);
+  background:  #a98f3b;
   width: 100%;
   justify-content: center;
   padding-bottom:20px;

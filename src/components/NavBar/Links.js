@@ -9,7 +9,7 @@ export const listaLinks = [
 
 export const StyledLinks = styled.div`
   display: flex;
-  background-color: #2c5364; //color temporal
+  background-color: #a98f3b; //color temporal
   justify-content: space-evenly;
   padding: 1rem 1rem;
   width: 77rem;
@@ -19,13 +19,14 @@ export const StyledLinks = styled.div`
   a {
     text-decoration: none;
     color: #ffff;
-    text-shadow: 4px 4px 6px #000000;
+    /* text-shadow: 4px 4px 6px #000000; */
   }
   a:hover {
     color: white;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
     transform: scale(1.2);
+    color: black;
   }
   @media (max-width: 900px) {
     display: none;

@@ -1,27 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const Titular  = styled.div `
-       @import url('https://fonts.googleapis.com/css2? family= Combo & display=swap');
-        font-family:Combo, cursive;
+const Titular = styled.div`
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-around;
+`;
 
-        box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-        width: 100% ;
-        height: 120px;
-        text-align: center;
-        font-weight: bold;
-        background-image: linear-gradient(rgb(13, 17, 28), rgb(211, 26, 20));
-        color:white;
-        margin:0 auto;
-        padding-top: 10px;
-     
-`
-
-
-
-const Titulo= () =>{
-    return <Titular>
-        <h1 > THE FARM GOORIN BROS.</h1>   
+const Titulo = () => {
+  return (
+    <Titular>
+      <h4> Envios gratis | <span style={{color:"#a98f3b"}}>A partir de $7500</span></h4>
+      <h4> Hasta 12 cuotas | <span style={{color:"#a98f3b"}}>Sin interés</span></h4>
     </Titular>
-}
+  );
+};
 export default Titulo;

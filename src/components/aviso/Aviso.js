@@ -9,10 +9,12 @@ export default function Layout() {
   return (
     <Box
       sx={{
-        backgroundColor: "#2c5364",
+        backgroundColor: "#a98f3b",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        fontSize: "13px",
+        wordSpacing: "7px",
       }}
     >
       {showAlert ? (
@@ -21,26 +23,28 @@ export default function Layout() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            color: '#ffff'
+            color: "#ffff",
           }}
           role="alert"
         >
           <strong>Nuevas Ofertas!</strong>
-          <span>
-            {"     "}
+
+          <span style={{ marginLeft: "10px" }}>
             Suscribite a nuestro NEWSLETTER y recibi las mejores ofertas!
           </span>
-         
-            <MdClose
-              sx={{ marginLeft: "30px" }}
-              onClick={() => setShowAlert(false)}
-              role="button"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <title>Close</title>
-            </MdClose>
-         
+
+          <MdClose
+            onClick={() => setShowAlert(false)}
+            role="button"
+            style={{
+              color: "#ffff",
+              marginLeft: "5px",
+            }}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <title>Close</title>
+          </MdClose>
         </Box>
       ) : null}
     </Box>

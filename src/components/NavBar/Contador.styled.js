@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 
+
 export const StyledCont = styled.div`
     position: relative;
     left: 30px;
