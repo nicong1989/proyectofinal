@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ContenedorBurger = styled.div`
   margin-top: 200px;
   left: 30px;
-  background: lightblue;
+  background: #a98f3b;
   border-radius: 5px;
   padding-top: 10px;
   padding-right: 60px;
@@ -16,10 +16,10 @@ const ContenedorBurger = styled.div`
   }
   a {
     text-decoration: none;
-    color: #000;
+    color: white;
   }
   a:hover {
-    color: white;
+    color: black;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
     transform: scale(1.2);

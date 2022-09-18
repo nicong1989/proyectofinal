@@ -1,6 +1,6 @@
 import React from "react";
 import Suscripcion from "./components/Suscripcion/Suscripcion";
-import Aviso from "./components/Aviso/Aviso";
+// import Aviso from "./components/Aviso/Aviso";
 import NavBar from "./components/NavBar/NavBar";
 import Header from "./components/Header/Header";
 import Gallery from "./components/Carousel/Carousel";
@@ -18,7 +18,7 @@ import "./components/Carousel/carousel.css";
 const App = () => {
   return (
     <>
-      <Aviso />
+      {/* <Aviso /> */}
       <Header />
       <NavBar />
       <Gallery />

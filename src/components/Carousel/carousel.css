@@ -26,7 +26,7 @@
 }
 .alice-carousel__prev-btn-item:hover,
 .alice-carousel__next-btn-item:hover {
-  background-color: #CD6155 ;
+  background-color: #a98f3b ;
   color: black;
 }
 
@@ -36,7 +36,7 @@
 }
 .alice-carousel__dots-item:not(.__custom):hover,
 .alice-carousel__dots-item:not(.__custom).__active {
-  background-color: #CD6155 ;
+  background-color: #a98f3b ;
 }
 
 .alice-carousel__dots-item:not(.__custom) {
