@@ -95,7 +95,7 @@ const ListProductos = () => {
   return (
     <>
       <Box
-        id="coleccion"
+        id="productos"
         sx={{
           backgroundColor: "black",
           display: "flex",
