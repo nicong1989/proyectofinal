@@ -100,7 +100,8 @@ const ListProductos = () => {
           backgroundColor: "black",
           display: "flex",
           alignItems: "center",
-          height:"550px"
+          height:"550px",
+          paddingBottom: "5%"
           
         }}
       >

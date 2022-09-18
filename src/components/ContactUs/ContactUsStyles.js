@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-   
+
 export const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@ export const Box = styled.div`
   justify-content: center;
   padding-bottom:20px;
 `;
-   
+
 export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +21,10 @@ export const Container = styled.div`
 
 export const Map = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
+width:80%;
+margin-left: 10%;
 `;
 
 export const Row = styled.div`
