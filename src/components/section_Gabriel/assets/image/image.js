@@ -1,13 +1,13 @@
-import baseball1 from "./baseball1.webp"
-import baseball2 from "./baseball2.webp"
-import baseball3 from "./baseball3.webp"
-import baseball4 from "./baseball4.webp"
-import thePanter1 from  './the-arena-1.jpg'
-import thePanter2 from  './the-panther-1.jpg'
-import thePanter3 from  './the-panther-2.jpg'
-import thePanter4 from  './the-panther-3.jpg'
-import thePanter5 from  './goorin1.webp'
-import thePanter6 from  './goorin2.webp'
+import baseball1 from "./foto1.jpg"
+import baseball2 from "./foto2.jpg"
+import baseball3 from "./foto3.jpg"
+import baseball4 from "./foto4.jpg"
+import thePanter1 from  './foto5.jpg'
+import thePanter2 from  './foto6.jpg'
+import thePanter3 from  './foto1.jpg'
+import thePanter4 from  './foto4.jpg'
+import thePanter5 from  './foto1.jpg'
+import thePanter6 from  './foto2.jpg'
 
 
 export default [ 

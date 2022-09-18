@@ -14,7 +14,7 @@ const ContactUs = () => {
   return (
     <Box>
       <Container>
-        <h1>Contacto:</h1>
+        <h1>CONTACTANOS</h1>
       </Container>
       <Map>
       <Maps/>

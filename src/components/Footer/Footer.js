@@ -25,7 +25,7 @@ const Footer = () => {
           </Column>
           <Column>
 
-            <Heading>CATEGORIAS</Heading>
+            
 
             <Heading id='contacto'>CATEGORIAS</Heading>
 

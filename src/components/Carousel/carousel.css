@@ -1,7 +1,7 @@
 .alice-carousel {
   background-color: black;
   padding: 10px;
-  height: 460px;
+  height: 400px;
 }
 
 .alice-carousel__prev-btn {
@@ -44,7 +44,7 @@
 }
 
 .alice-carousel__wrapper {
-  height: 380px;
+  height: 350px;
   /* margin-bottom: 50px; */
 }
 

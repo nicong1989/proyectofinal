@@ -75,11 +75,11 @@ const ContactForm = () => {
         />
         {errors.email && <p style={styles}>{errors.email}</p>}
 
-        <input type="submit" value="SUSCRIBIRSE" style={{ width: '102px', backgroundColor: '#17b978', border: 'none', color: '#ffff',textShadow: "2px 2px 4px #000000"}} />
+        <input type="submit" value="SUSCRIBIRSE" style={{ width: '109px', backgroundColor: '#a98f3b', border: 'none', color: '#ffff'}} />
       </form>
       {loading && <Loader />}
       {response && (
-        <Message msg="Los datos han sido enviados" bgColor="#17b978" />
+        <Message msg="Los datos han sido enviados" bgColor="#a98f3b" />
       )}
     </div>
   );
