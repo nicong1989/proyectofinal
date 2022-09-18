@@ -56,9 +56,8 @@ const ListProductos = () => {
     let itemInCart = state.cart.find(
       (item) => item.id === data.id
     );
-      console.log(itemInCart)
     if (itemInCart) {
-      let endpoint = `http://localhost:3002/cart/${data.id}`;
+      let endpoint = `http://localhost:3002/cart/${itemInCart.id}`;
       let options = {
         method: "PUT",
         url: endpoint,
@@ -70,7 +69,7 @@ const ListProductos = () => {
         method: "POST",
         url: `http://localhost:3002/cart`,
         data: { ...data, quantity: 1 },
-      }).then(console.log(data));
+      });
     }
 
     dispatch({ type: TYPES.ADD_TO_CART, payload: data });

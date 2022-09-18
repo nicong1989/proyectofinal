@@ -85,11 +85,8 @@ const Carrito = () => {
   };
 
   const clearCart = () => {
-    try {
-      axios.delete(`http://localhost:3002/cart`)
-    } catch (error) {
-      console.log(error)
-    }
+   state.cart.map((item)=>
+   axios.delete(`http://localhost:3002/cart/${item.id}`))
     dispatch({ type: TYPES.CLEAR_CART });
   };
   let count = 0;
