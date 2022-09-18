@@ -97,7 +97,7 @@ const ListProductos = () => {
   return (
     <>
       <Box
-        id="productos"
+        id="coleccion"
         sx={{
           maxWidth: "1353px",
           height: "35rem",

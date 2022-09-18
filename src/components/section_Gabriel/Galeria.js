@@ -22,7 +22,7 @@ const Galeria= styled.section`
         `
 export const  Gallery = () => {
   return (
-    <Galeria>
+    <Galeria id="productos">
           <ComponenteDiv className="visible"/>
 
           <ReproductorVideo/>
