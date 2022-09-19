@@ -37,6 +37,7 @@ export const useForm = (initialForm, validateForm) => {
             Accept: "application/json",
           },
         })
+        //desvuelve la respuesta
         .then((res) => {
           setLoading(false);
           setResponse(true);
