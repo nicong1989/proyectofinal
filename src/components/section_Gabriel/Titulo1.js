@@ -11,7 +11,12 @@ const Titular = styled.div`
   padding-top: 12px;
   display: flex;
   justify-content: space-around;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
+
 
 const Titulo = () => {
   return (

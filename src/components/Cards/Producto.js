@@ -92,7 +92,7 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
           justifyContent: "space-between",
         }}
       >
-        <button onClick={() => addToCart(data)} className={display} >
+        <button onClick={() => addToCart(data)} className={display}>
           <strong>COMPRAR</strong>
         </button>
 
@@ -179,7 +179,6 @@ const CardProductos = ({ data, addToCart, addToFav }) => {
               >
                 <strong>Precio:</strong> {price}
               </Typography>
-
             </CardContent>
           </Modal.Body>
 
