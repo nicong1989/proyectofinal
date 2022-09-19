@@ -22,10 +22,12 @@ export const useForm = (initialForm, validateForm) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //actualiza la variable de estado de los errores
     setErrors(validateForm(form));
-
+    //se valida que el objeto de errores se encuentra vacio
     if (Object.keys(errors).length === 0) {
       alert("Enviando Formulario");
+      //restablezco la variable loading a true para comenzar a cargar el loader y hacer la peticion
       setLoading(true);
       helpHttp()
         .post("https://formsubmit.co/ajax/ngomeznicolas89@gmail.com", {
