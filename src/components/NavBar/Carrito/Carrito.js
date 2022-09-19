@@ -147,8 +147,8 @@ const Carrito = () => {
       </PrecioTotal>
       </DivTotal>
       <DivBotones>
-        <Button onClick={() => clearCart()}>Vaciar Carrito</Button>
-        <Button>Finalizar Compra</Button>
+        <Button style={{backgroundColor: "#a98f3b"}}onClick={() => clearCart()}>Vaciar Carrito</Button>
+        <Button style={{backgroundColor: "#a98f3b"}}>Finalizar Compra</Button>
       </DivBotones>
       
     </ContainerStyled>
