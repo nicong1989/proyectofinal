@@ -31,8 +31,7 @@ const ListProductos = () => {
     updateState();
   }, []);
   const deleteFromCart = (data, all = false) => {
-    // console.log(id, all)
-    // Explicar esto antes que la programación del reducer
+    
     let itemInCart = state.cart.find(
       (item) => item.id === data.id
     );

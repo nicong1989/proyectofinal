@@ -1,3 +1,5 @@
+// En este archivo se declaran los TYPES de acciones correspondientes al reducer del carrito
+
 export const TYPES = {
   ADD_TO_CART_NAV: "ADD_TO_CART_NAV",
   READ_STATE: "READ_STATE",
