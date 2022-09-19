@@ -33,7 +33,7 @@ const validationsForm = (form) => {
 };
 
 let styles = {
-  // fontWeight: "bold",
+ 
   color: "#ffff",
   textShadow: "4px 4px 6px #000000",
 
